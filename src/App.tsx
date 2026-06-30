@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CATEGORIES, Category, CategoryId, Question } from './types';
 import { QUESTIONS } from './data/questions';
 
@@ -25,6 +25,37 @@ export default function App() {
   const [revealed, setRevealed] = useState(false);
   const [checkedItems, setCheckedItems] = useState<Set<number>>(new Set());
 
+  // ページ先頭の目印
+  const topRef = useRef<HTMLDivElement>(null);
+
+  // iOS Safari / Android Chrome の両方で確実に先頭へ戻す helper
+  const scrollToTop = () => {
+    const doScroll = () => {
+      // 複数の手段を併用（ブラウザによって効くものが異なる）
+      try {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      } catch {
+        window.scrollTo(0, 0);
+      }
+      if (document.documentElement) document.documentElement.scrollTop = 0;
+      if (document.body) document.body.scrollTop = 0;
+      topRef.current?.scrollIntoView({ block: 'start', behavior: 'auto' });
+    };
+
+    // 即時 + 描画後(rAF) + さらに後(timeout) の三段で確実に
+    doScroll();
+    requestAnimationFrame(() => {
+      doScroll();
+      setTimeout(doScroll, 0);
+    });
+  };
+
+  // 画面遷移・問題切り替え・回答表示の変化時に先頭へ
+  useEffect(() => {
+    scrollToTop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [screen, activeCategory, questionIndex, revealed]);
+
   const categoryQuestions = activeCategory
     ? QUESTIONS.filter((q) => q.category === activeCategory)
     : [];
@@ -36,11 +67,13 @@ export default function App() {
   const goToTop = () => {
     setScreen('top');
     setActiveCategory(null);
+    scrollToTop();
   };
 
   const goToCategory = () => {
     setScreen('category');
     setActiveCategory(null);
+    scrollToTop();
   };
 
   const selectCategory = (id: CategoryId) => {
@@ -49,6 +82,7 @@ export default function App() {
     setRevealed(false);
     setCheckedItems(new Set());
     setScreen('question');
+    scrollToTop();
   };
 
   const restartCategory = () => {
@@ -56,17 +90,20 @@ export default function App() {
     setRevealed(false);
     setCheckedItems(new Set());
     setScreen('question');
+    scrollToTop();
   };
 
   const nextQuestion = () => {
     // 最終問題なら完了画面へ。それ以外は次の問題へ。
     if (questionIndex >= categoryQuestions.length - 1) {
       setScreen('complete');
+      scrollToTop();
       return;
     }
     setRevealed(false);
     setCheckedItems(new Set());
     setQuestionIndex((prev) => prev + 1);
+    scrollToTop();
   };
 
   const toggleCheck = (i: number) => {
@@ -79,6 +116,9 @@ export default function App() {
 
   return (
     <div className="flex min-h-screen min-h-[100dvh] flex-col bg-slate-950 text-slate-100">
+      {/* ページ先頭の目印（scrollIntoView 用） */}
+      <div ref={topRef} aria-hidden="true" />
+
       {/* ヘッダー */}
       <header className="border-b border-slate-800 bg-slate-900/60 backdrop-blur">
         <div className="mx-auto max-w-2xl px-4 py-3 flex items-center gap-3">
@@ -99,7 +139,7 @@ export default function App() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-2xl px-4 py-6 pb-24">
+      <main className="mx-auto w-full max-w-2xl flex-1 px-4 py-6 pb-[calc(env(safe-area-inset-bottom)+4rem)]">
         {screen === 'top' && <TopScreen onStart={goToCategory} />}
 
         {screen === 'category' && (

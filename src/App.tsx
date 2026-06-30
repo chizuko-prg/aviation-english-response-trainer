@@ -78,7 +78,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="flex min-h-screen min-h-[100dvh] flex-col bg-slate-950 text-slate-100">
       {/* ヘッダー */}
       <header className="border-b border-slate-800 bg-slate-900/60 backdrop-blur">
         <div className="mx-auto max-w-2xl px-4 py-3 flex items-center gap-3">

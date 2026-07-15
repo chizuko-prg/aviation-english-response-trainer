@@ -418,10 +418,10 @@ export const QUESTIONS: Question[] = [
       '訓練空域での作業を終え、帰投します。残燃料は1時間30分、搭乗者は2名です。',
     task: '作業終了と帰投の意図、必要な情報を簡潔に報告してください。',
     sampleAnswerLevel4:
-      'Maneuvers complete, returning to the field, fuel one plus three zero, two souls on board.',
+      'Maneuvers complete, returning to the field, fuel one hour three zero, two on board.',
     sampleAnswerLevel5:
-      'Training maneuvers complete, request return to the field, fuel endurance one hour three zero minutes, two persons on board.',
-    keyPhrases: ['maneuvers complete', 'fuel', 'souls on board', 'persons on board'],
+      'Training maneuvers complete. We are returning to the field with fuel endurance one hour three zero minutes and two persons on board.',
+    keyPhrases: ['maneuvers complete', 'fuel one hour three zero', 'two on board', 'persons on board'],
     selfCheckItems: [
       '現在の活動状況を伝えられたか',
       '燃料・搭乗者数を正しく報告できたか',
@@ -571,17 +571,17 @@ export const QUESTIONS: Question[] = [
       '視程が落ちてきて、目的の空港が見えにくくなっています。状況を共有したいです。',
     task: '視程の悪化と現在の状況を報告してください。',
     sampleAnswerLevel4:
-      'Visibility is getting worse, field not in sight yet.',
+      'Visibility is getting worse, request vectors to the field.',
     sampleAnswerLevel5:
-      'Visibility is decreasing, I do not have the field in sight, request assistance.',
-    keyPhrases: ['visibility decreasing', 'not in sight', 'request assistance'],
+      'Visibility is decreasing, I do not have the field in sight, request vectors to the field.',
+    keyPhrases: ['visibility decreasing', 'not in sight', 'request vectors'],
     selfCheckItems: [
       '視程悪化を伝えられたか',
       '空港を視認できていない事実を示せたか',
       '早めに支援を求められたか',
     ],
     safetyNote:
-      '視程悪化は早めに共有を。見えないまま進入を続けず、支援を求めましょう。',
+      '視程悪化は早めに共有を。見えないまま進入を続けず、支援を求めましょう。状況がさらに悪化する場合は、PAN-PANやMAYDAYの宣言をためらわないでください。ただし実運航では、教官・会社・公式手順に従ってください。',
   },
 
   // ===================================================================

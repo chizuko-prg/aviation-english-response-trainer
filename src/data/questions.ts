@@ -125,10 +125,10 @@ export const QUESTIONS: Question[] = [
       '長い経路変更の指示を受けましたが、後半の地点名が複数あいまいでした。',
     task: '分かった部分を述べ、不確かな後半だけ言い直してもらってください。',
     sampleAnswerLevel4:
-      'I copied the first part, say again after the first point.',
+      'Say again all after [first point], [callsign].',
     sampleAnswerLevel5:
-      'I copied up to the first point, say again the rest of the routing slowly, please.',
-    keyPhrases: ['I copied up to', 'say again the rest', 'slowly'],
+      'I copied up to [first point]. Say again all after that, slowly please, [callsign].',
+    keyPhrases: ['say again all after', 'I copied up to', 'slowly please'],
     selfCheckItems: [
       'どこまで分かったか具体的に示せたか',
       '必要な部分だけ言い直しを頼めたか',
@@ -146,7 +146,7 @@ export const QUESTIONS: Question[] = [
     task: '着陸許可が出ているか確認してください。',
     sampleAnswerLevel4: 'Confirm cleared to land runway three four.',
     sampleAnswerLevel5:
-      'Confirm I am cleared to land runway three four.',
+      'Tower, confirm [callsign] is cleared to land runway three four, I did not catch a clear reply.',
     keyPhrases: ['confirm', 'cleared to land', 'runway'],
     selfCheckItems: [
       '着陸許可の確認ができたか',

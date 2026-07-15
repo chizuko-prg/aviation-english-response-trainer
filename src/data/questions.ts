@@ -282,15 +282,15 @@ export const QUESTIONS: Question[] = [
     task: 'タッチアンドゴーを要求してください。',
     sampleAnswerLevel4: 'Request touch and go.',
     sampleAnswerLevel5:
-      'Request the option, touch and go if approved.',
-    keyPhrases: ['request', 'touch and go', 'the option'],
+      'Request touch and go, then one more circuit, [callsign].',
+    keyPhrases: ['request', 'touch and go', 'one more circuit'],
     selfCheckItems: [
       'やりたい操作を明確に要求できたか',
       '簡潔に伝えられたか',
       '許可前提の言い方ができたか',
     ],
     safetyNote:
-      'やりたい操作は事前に要求し、許可を得てから実施しましょう。',
+      'やりたい操作は事前に要求し、許可を得てから実施しましょう。“The option” can include touch-and-go, stop-and-go, low approach, missed approach, or full stop. If you only want touch and go, say that clearly.',
   },
   {
     id: 'unr-006',
@@ -328,7 +328,7 @@ export const QUESTIONS: Question[] = [
       '早めに状況を共有できたか',
     ],
     safetyNote:
-      '燃料の余裕が減ってきたら、緊急になる前に早めに要求や共有をしましょう。',
+      '燃料の余裕が減ってきたら、緊急になる前に早めに要求や共有をしましょう。In real operations, “minimum fuel” is an official advisory used when you cannot accept undue delay. It is not the same as declaring an emergency. Follow your instructor, company, and official procedures.',
   },
   {
     id: 'unr-008',

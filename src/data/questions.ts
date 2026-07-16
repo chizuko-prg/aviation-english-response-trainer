@@ -795,7 +795,7 @@ export const QUESTIONS: Question[] = [
     category: 'training-plain-english',
     difficulty: 'intermediate',
     situation:
-      '管制官に、これから空域で実施する訓練内容（スローフライトとステアターン）を平易な英語で説明する必要があります。',
+      '管制官に、これから空域で実施する訓練内容（スローフライトとスティープターン）を平易な英語で説明する必要があります。',
     task: '定型文ではなく、自分の言葉でこれから行う作業を説明してください。',
     sampleAnswerLevel4:
       'We will do slow flight and steep turns in this area for about twenty minutes.',

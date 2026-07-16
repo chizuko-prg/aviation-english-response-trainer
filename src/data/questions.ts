@@ -595,7 +595,7 @@ export const QUESTIONS: Question[] = [
       'エンジン計器に異常を示す表示が出ました。直ちに緊急ではありませんが、注意が必要な状況です。',
     task: 'PAN-PANを用いて、状況をATCに伝えてください。',
     sampleAnswerLevel4:
-      'Pan-pan, pan-pan, pan-pan, engine indication problem, request return to the field.',
+      'Pan-pan, pan-pan, pan-pan, [callsign], engine indication problem, request return to the field.',
     sampleAnswerLevel5:
       'Pan-pan, pan-pan, pan-pan, [callsign], abnormal engine indication, request priority handling for return to the field, two persons on board.',
     keyPhrases: ['pan-pan', 'abnormal indication', 'request priority', 'persons on board'],
@@ -615,7 +615,7 @@ export const QUESTIONS: Question[] = [
       'エンジンが停止し、直ちに緊急着陸が必要な状況です。生命に差し迫った危険があります。',
     task: 'MAYDAYを用いて、緊急事態と必要な情報を伝えてください。',
     sampleAnswerLevel4:
-      'Mayday, mayday, mayday, engine failure, forced landing, two souls on board.',
+      'Mayday, mayday, mayday, [callsign], engine failure, forced landing, two persons on board.',
     sampleAnswerLevel5:
       'Mayday, mayday, mayday, [callsign], engine failure, attempting forced landing, position five miles north of the field, two persons on board, requesting immediate assistance.',
     keyPhrases: ['mayday', 'engine failure', 'forced landing', 'requesting immediate assistance'],
@@ -625,7 +625,7 @@ export const QUESTIONS: Question[] = [
       '切迫した状況でも順序立てて話せたか',
     ],
     safetyNote:
-      'MAYDAYは生命や機体に差し迫った危険がある最優先の緊急通報です。落ち着いて、伝えるべき情報を順に伝えましょう。',
+      'MAYDAYは生命や機体に差し迫った危険がある最優先の緊急通報です。落ち着いて、伝えるべき情報を順に伝えましょう。本アプリは練習用です。実運航では教官・会社・公式手順に従ってください。',
   },
   {
     id: 'abn-003',
@@ -634,7 +634,7 @@ export const QUESTIONS: Question[] = [
     situation:
       '無線の調子が悪く、こちらの送信が届いているか不安です。',
     task: '送信が聞こえているか確認してください。',
-    sampleAnswerLevel4: 'How do you read?',
+    sampleAnswerLevel4: '[callsign], how do you read?',
     sampleAnswerLevel5:
       'How do you read me? I think I have a radio problem.',
     keyPhrases: ['how do you read', 'radio problem'],
@@ -654,7 +654,7 @@ export const QUESTIONS: Question[] = [
       '客室内に軽い煙のにおいがしますが、火は見えません。注意が必要な状況です。',
     task: 'PAN-PANで煙のにおいを報告し、着陸の優先を要求してください。',
     sampleAnswerLevel4:
-      'Pan-pan, pan-pan, pan-pan, smell of smoke in the cabin, request to land.',
+      'Pan-pan, pan-pan, pan-pan, [callsign], smell of smoke in the cabin, request to land.',
     sampleAnswerLevel5:
       'Pan-pan, pan-pan, pan-pan, [callsign], smell of smoke in the cabin, no fire visible, request priority to land.',
     keyPhrases: ['pan-pan', 'smell of smoke', 'no fire visible', 'request priority'],
@@ -674,7 +674,7 @@ export const QUESTIONS: Question[] = [
       '操縦系統の一部に違和感があり、機体のコントロールが難しくなってきています。',
     task: 'MAYDAYで操縦困難を伝え、即時の支援を要求してください。',
     sampleAnswerLevel4:
-      'Mayday, mayday, mayday, control problem, request immediate help.',
+      'Mayday, mayday, mayday, [callsign], control problem, request immediate help.',
     sampleAnswerLevel5:
       'Mayday, mayday, mayday, [callsign], I have a control problem, difficult to fly, request immediate assistance and vectors to the nearest field.',
     keyPhrases: ['mayday', 'control problem', 'immediate assistance', 'nearest field'],
@@ -694,7 +694,7 @@ export const QUESTIONS: Question[] = [
       '体調が急に悪くなってきましたが、まだ操縦は続けられます。早めに降りたいです。',
     task: '体調不良を伝え、早めの着陸を要求してください。',
     sampleAnswerLevel4:
-      'Pan-pan, pan-pan, pan-pan, I feel sick, request to land soon.',
+      'Pan-pan, pan-pan, pan-pan, [callsign], I feel sick, request to land soon.',
     sampleAnswerLevel5:
       'Pan-pan, pan-pan, pan-pan, [callsign], I am not feeling well, still able to fly, request to land as soon as possible.',
     keyPhrases: ['pan-pan', 'not feeling well', 'still able to fly', 'as soon as possible'],
@@ -714,17 +714,17 @@ export const QUESTIONS: Question[] = [
       '残燃料が想定より少なく、このままでは余裕がなくなりそうです。まだ緊急ではありません。',
     task: 'PAN-PANで燃料の状況を伝え、優先着陸を要求してください。',
     sampleAnswerLevel4:
-      'Pan-pan, pan-pan, pan-pan, low fuel, request priority to land.',
+      'Pan-pan, pan-pan, pan-pan, [callsign], low fuel, request priority to land.',
     sampleAnswerLevel5:
-      'Pan-pan, pan-pan, pan-pan, [callsign], low fuel, request priority for landing, not an emergency yet.',
-    keyPhrases: ['pan-pan', 'low fuel', 'request priority', 'not an emergency yet'],
+      'Pan-pan, pan-pan, pan-pan, [callsign], low fuel, request priority for landing, no delay acceptable.',
+    keyPhrases: ['pan-pan', 'low fuel', 'request priority', 'no delay acceptable'],
     selfCheckItems: [
       'PAN-PANで燃料状況を伝えられたか',
       'まだ緊急ではないと示せたか',
       '優先着陸を要求できたか',
     ],
     safetyNote:
-      '燃料は緊急になる前の共有が肝心です。状況が悪化したら速やかにMAYDAYへ切り替えます。',
+      '燃料は緊急になる前の共有が肝心です。状況が悪化したら速やかにMAYDAYへ切り替えます。実運航では “minimum fuel” という公式のアドバイザリ手続きがあります。教官・会社・公式手順に従ってください。',
   },
   {
     id: 'abn-008',
@@ -734,7 +734,7 @@ export const QUESTIONS: Question[] = [
       '緊急事態を宣言して対応中でしたが、状況が安定し、危険が去りました。',
     task: '緊急状態を解除することを伝えてください。',
     sampleAnswerLevel4:
-      'Cancel mayday, situation is under control.',
+      'Cancel mayday, [callsign], situation is under control.',
     sampleAnswerLevel5:
       'Cancel mayday, [callsign], the situation is now under control, continuing to land normally.',
     keyPhrases: ['cancel mayday', 'under control', 'continuing to land'],
@@ -754,7 +754,7 @@ export const QUESTIONS: Question[] = [
       '緊急事態の最中で、管制官から搭乗者数と残燃料を尋ねられました。',
     task: '搭乗者数と残燃料を報告してください。',
     sampleAnswerLevel4:
-      'Two persons on board, fuel one hour.',
+      'Two persons on board, fuel one hour, [callsign].',
     sampleAnswerLevel5:
       'Two persons on board, fuel endurance about one hour remaining.',
     keyPhrases: ['persons on board', 'fuel endurance', 'remaining'],
@@ -774,7 +774,7 @@ export const QUESTIONS: Question[] = [
       '緊急事態で、最寄りの空港への誘導（ベクター）を必要としています。',
     task: 'MAYDAYに続けて、最寄り空港へのベクターを要求してください。',
     sampleAnswerLevel4:
-      'Mayday, mayday, mayday, request vectors to the nearest airport.',
+      'Mayday, mayday, mayday, [callsign], request vectors to the nearest airport.',
     sampleAnswerLevel5:
       'Mayday, mayday, mayday, [callsign], request vectors to the nearest suitable airport, standing by for headings.',
     keyPhrases: ['mayday', 'request vectors', 'nearest suitable airport', 'standing by'],

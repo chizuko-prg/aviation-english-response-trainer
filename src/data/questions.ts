@@ -964,6 +964,199 @@ export const QUESTIONS: Question[] = [
     safetyNote:
       '視程悪化は早めに共有を。見えないまま進入を続けず、支援を求めましょう。状況がさらに悪化する場合は、PAN-PANやMAYDAYの宣言をためらわないでください。ただし実運航では、教官・会社・公式手順に従ってください。',
   },
+  {
+    id: 'sit-011',
+    category: 'situation-report',
+    difficulty: 'basic',
+    situation:
+      '場周経路でベースレグに旋回します。タワーへ位置を報告します。',
+    task: 'ベースレグに入ることを報告してください。',
+    sampleAnswerLevel4: 'Left base runway three four, [callsign].',
+    sampleAnswerLevel5:
+      'Turning left base for runway three four, full stop, [callsign].',
+    keyPhrases: ['left base', 'turning', 'runway'],
+    selfCheckItems: [
+      '場周のどのレグか伝えられたか',
+      '滑走路番号を添えられたか',
+      '着陸の意図を示せたか',
+    ],
+    safetyNote:
+      'ベースへの旋回は他機と経路が交差しやすい局面です。位置報告で周囲との相互認識を保ちましょう。',
+  },
+  {
+    id: 'sit-012',
+    category: 'situation-report',
+    difficulty: 'basic',
+    situation:
+      '着陸進入中、安定した進入を続けられないと判断し、ゴーアラウンドを行います。',
+    task: 'ゴーアラウンドすることを報告してください。',
+    sampleAnswerLevel4: '[callsign] going around.',
+    sampleAnswerLevel5:
+      '[callsign] going around, unable to continue the approach.',
+    keyPhrases: ['going around', 'unable to continue', 'approach'],
+    selfCheckItems: [
+      'ゴーアラウンドを簡潔に宣言できたか',
+      '報告より操縦を優先できたか',
+      '宣言後の経路を管制指示・手順に従う心構えでいられたか',
+    ],
+    safetyNote:
+      'ゴーアラウンドは操縦士の判断で実施できます。まず操縦を優先し、無線は可能になってから行いましょう。宣言後の飛行経路は、管制指示・公示された手順・教官の指示に従ってください。',
+  },
+  {
+    id: 'sit-013',
+    category: 'situation-report',
+    difficulty: 'basic',
+    situation:
+      '着陸後、管制官から滑走路を離脱したら報告するよう求められています。滑走路から離脱しました。',
+    task: '滑走路から離脱したことを報告してください。',
+    sampleAnswerLevel4: '[callsign], clear of runway three four.',
+    sampleAnswerLevel5:
+      '[callsign], clear of runway three four at Bravo.',
+    keyPhrases: ['clear of runway', 'runway three four', 'at Bravo'],
+    selfCheckItems: [
+      '滑走路離脱を報告できたか',
+      '離脱位置を添えられたか',
+      '機体全体が滑走路保持位置標識を越えてから報告したか',
+    ],
+    safetyNote:
+      '機体全体が滑走路保持位置標識（ホールドライン）を越えるまでは「clear of runway」ではありません。完全に離脱してから報告しましょう。',
+  },
+  {
+    id: 'sit-014',
+    category: 'situation-report',
+    difficulty: 'basic',
+    situation:
+      '滑走路手前の停止位置で離陸前点検を終えました。出発準備ができたことを伝えます。',
+    task: '出発準備が整ったことを報告してください。',
+    sampleAnswerLevel4: 'Ready for departure, runway three four, [callsign].',
+    sampleAnswerLevel5:
+      'Holding short runway three four, ready for departure, [callsign].',
+    keyPhrases: ['ready for departure', 'holding short', 'runway'],
+    selfCheckItems: [
+      '準備完了を報告できたか',
+      '待機位置を添えられたか',
+      '点検が終わる前に「ready」と言わなかったか',
+    ],
+    safetyNote:
+      '「ready」は本当に準備が整ってから伝えましょう。準備前の申告は、急な離陸許可を受けて慌てる原因になります。',
+  },
+  {
+    id: 'sit-015',
+    category: 'situation-report',
+    difficulty: 'intermediate',
+    situation:
+      '離陸後の上昇中、タワーからDeparture（出域管制）へ周波数を移管されました。現在高度3,500フィート、指示された5,000フィートへ上昇中です。',
+    task: 'Departureへの初回コンタクトで、現在高度と上昇目標高度を報告してください。',
+    sampleAnswerLevel4:
+      'Departure, [callsign], three thousand five hundred, climbing five thousand.',
+    sampleAnswerLevel5:
+      'Departure, [callsign], passing three thousand five hundred, climbing to five thousand, westbound.',
+    keyPhrases: ['passing', 'climbing to', 'Departure'],
+    selfCheckItems: [
+      '現在高度と目標高度の両方を報告できたか',
+      '数字を正しい読み方で言えたか',
+      '呼び出す相手（Departure）を最初に言えたか',
+    ],
+    safetyNote:
+      '初回コンタクトでの高度報告は、管制がレーダー表示の高度と照合するための重要な情報です。現在高度と目標高度をセットで伝えましょう。',
+  },
+  {
+    id: 'sit-016',
+    category: 'situation-report',
+    difficulty: 'intermediate',
+    situation:
+      '空港へ帰投中、タワー空域に近づいています。ATISを受信済みで、最初の交信を行います。',
+    task: '位置・高度・ATIS受信・着陸意図を含めて最初のコンタクトをしてください。',
+    sampleAnswerLevel4:
+      'Tower, [callsign], ten miles west at three thousand five hundred, information Bravo, inbound.',
+    sampleAnswerLevel5:
+      'Tower, [callsign], ten miles west at three thousand five hundred, information Bravo, inbound for full stop.',
+    keyPhrases: ['information Bravo', 'inbound', 'full stop'],
+    selfCheckItems: [
+      '位置・高度・ATIS・意図の4点を漏れなく伝えられたか',
+      '整理された順序で言えたか',
+      'ATIS未受信のまま「information Bravo」と言わなかったか',
+    ],
+    safetyNote:
+      '最初のコンタクトで必要な情報が揃っていると、管制の指示が早く正確になります。ATISは必ず受信してから識別文字を伝えましょう。',
+  },
+  {
+    id: 'sit-017',
+    category: 'situation-report',
+    difficulty: 'intermediate',
+    situation:
+      '巡航中、軽い乱気流が続いています。高度変更は必要ありませんが、状況を管制に共有します。',
+    task: '乱気流の状況を報告してください（要求はしません）。',
+    sampleAnswerLevel4: 'Light turbulence at four thousand five hundred, [callsign].',
+    sampleAnswerLevel5:
+      '[callsign] reporting light turbulence at four thousand five hundred, able to continue.',
+    keyPhrases: ['reporting', 'light turbulence', 'able to continue'],
+    selfCheckItems: [
+      '揺れの程度（light等）を伝えられたか',
+      '高度を添えられたか',
+      '要求と報告を区別できたか',
+    ],
+    safetyNote:
+      '乱気流の報告は後続機の安全に役立ちます。程度と高度をセットで伝えましょう。揺れが強まる場合は、高度変更の要求も遠慮せずに。',
+  },
+  {
+    id: 'sit-018',
+    category: 'situation-report',
+    difficulty: 'intermediate',
+    situation:
+      'ファイナル進入中、鳥の群れを滑走路進入端付近に確認しました。位置を客観的にタワーへ報告します。',
+    task: '鳥の群れの位置を報告してください。',
+    sampleAnswerLevel4: 'Flock of birds near the runway threshold, [callsign].',
+    sampleAnswerLevel5:
+      '[callsign], flock of birds crossing near the runway threshold.',
+    keyPhrases: ['flock of birds', 'near the threshold', 'crossing'],
+    selfCheckItems: [
+      '鳥の位置を客観的に伝えられたか',
+      '群れの動きを添えられたか',
+      '報告をためらわなかったか',
+    ],
+    safetyNote:
+      '鳥や動物の情報は、自分と後続機を守る報告です。危険が進路上にある場合は報告より操縦を優先し、必要ならためらわずゴーアラウンドしましょう。',
+  },
+  {
+    id: 'sit-019',
+    category: 'situation-report',
+    difficulty: 'advanced',
+    situation:
+      'フライトフォローイングを受けながら訓練空域にいます。訓練で使用する高度範囲は事前に管制と調整済みです。これから模擬エンジン故障の練習を開始し、高度が大きく下がります。開始を報告します。',
+    task: '模擬（simulated）であることを明確にして、訓練の開始と高度変化を報告してください。',
+    sampleAnswerLevel4:
+      'Beginning a simulated engine failure exercise, descending from five thousand, [callsign].',
+    sampleAnswerLevel5:
+      '[callsign], beginning a simulated engine failure exercise in the practice area, descending from five thousand, practice only.',
+    keyPhrases: ['simulated', 'engine failure exercise', 'practice only'],
+    selfCheckItems: [
+      '「simulated」を明確に言えたか',
+      '開始と高度変化を報告できたか',
+      '実際の緊急と誤解されない伝え方だったか',
+    ],
+    safetyNote:
+      '練習の報告では「simulated」を必ず明示しましょう。ATCサービスを受けている間の大きな高度変更は、必要に応じて事前に調整します。模擬訓練にPAN-PANやMAYDAYを使ってはいけません。実際の運用は教官・現地手順に従ってください。',
+  },
+  {
+    id: 'sit-020',
+    category: 'situation-report',
+    difficulty: 'advanced',
+    situation:
+      'VFRで自機の航法により巡航中です（管制から針路は割り当てられていません）。接近する他機を視認し、間隔確保のため右に回避します。',
+    task: '回避行動を取っていることを報告してください。',
+    sampleAnswerLevel4: 'Turning right to avoid traffic, [callsign].',
+    sampleAnswerLevel5:
+      '[callsign] turning right to avoid traffic, will advise when clear.',
+    keyPhrases: ['turning to avoid', 'traffic', 'will advise'],
+    selfCheckItems: [
+      '回避行動を簡潔に報告できたか',
+      '回避後に知らせる意図を伝えられたか',
+      '報告のために回避操作を遅らせなかったか',
+    ],
+    safetyNote:
+      '衝突回避の操作は無線より優先します。安全な間隔を確保したら速やかに状況を伝えましょう。管制から針路や高度を割り当てられている場合は、逸脱したことを可能になり次第伝えてください。',
+  },
 
   // ===================================================================
   // Abnormal / Emergency

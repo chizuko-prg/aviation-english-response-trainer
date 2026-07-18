@@ -194,6 +194,196 @@ export const QUESTIONS: Question[] = [
     safetyNote:
       '滑走路の取り違えは重大な誤進入につながります。番号は確実に確認しましょう。',
   },
+  {
+    id: 'sac-011',
+    category: 'say-again-confirm',
+    difficulty: 'basic',
+    situation:
+      '管制官の指示の途中に他機の送信が重なり、指示の一部がつぶれて聞こえませんでした。',
+    task: '送信が重なって聞き取れなかったことを伝え、もう一度言ってもらってください。',
+    sampleAnswerLevel4: 'Blocked, say again, [callsign].',
+    sampleAnswerLevel5:
+      'Your transmission was blocked by another station, say again, [callsign].',
+    keyPhrases: ['blocked', 'say again', 'another station'],
+    selfCheckItems: [
+      '送信が重なった事実を伝えられたか',
+      '「blocked」を使えたか',
+      'つぶれた部分を推測で復唱しなかったか',
+    ],
+    safetyNote:
+      '送信の重なりは混雑した周波数では珍しくありません。つぶれた指示を推測で実行せず、必ず言い直してもらいましょう。',
+  },
+  {
+    id: 'sac-012',
+    category: 'say-again-confirm',
+    difficulty: 'intermediate',
+    situation:
+      '滑走路手前で「line up and wait」と聞こえましたが、離陸許可まで出たのか確信が持てません。',
+    task: '離陸許可ではなく滑走路上での待機のみであることを確認してください。',
+    sampleAnswerLevel4: 'Confirm line up and wait runway three four, [callsign].',
+    sampleAnswerLevel5:
+      'Confirm [callsign] is to line up and wait, not cleared for takeoff.',
+    keyPhrases: ['confirm', 'line up and wait', 'not cleared for takeoff'],
+    selfCheckItems: [
+      'line up and waitと離陸許可を区別できたか',
+      '滑走路番号を添えて確認できたか',
+      '許可未確認のまま離陸滑走を始めなかったか',
+    ],
+    safetyNote:
+      '「line up and wait」は離陸許可ではありません。区別が曖昧なまま離陸滑走を始めるのは重大な危険です。',
+  },
+  {
+    id: 'sac-013',
+    category: 'say-again-confirm',
+    difficulty: 'basic',
+    situation:
+      '管制官からaltimeter setting（気圧規正値）を伝えられましたが、数字の後半が聞き取れませんでした。',
+    task: 'altimeter settingをもう一度言ってもらってください。',
+    sampleAnswerLevel4: 'Say again the altimeter setting, [callsign].',
+    sampleAnswerLevel5:
+      'Say again the altimeter setting, I missed the last two digits, [callsign].',
+    keyPhrases: ['say again', 'altimeter setting', 'last two digits'],
+    selfCheckItems: [
+      'altimeter settingの聞き返しができたか',
+      '聞き逃した範囲を具体的に伝えられたか',
+      '不確かな数字のまま高度計を合わせなかったか',
+    ],
+    safetyNote:
+      '気圧規正値の誤りは表示高度全体の誤りにつながります。数字が不確かなまま高度計を規正してはいけません。',
+  },
+  {
+    id: 'sac-014',
+    category: 'say-again-confirm',
+    difficulty: 'intermediate',
+    situation:
+      '管制官からトラフィック情報を伝えられましたが、相手機の方角が聞き取れませんでした。まだ視認できていません。',
+    task: 'トラフィックの位置をもう一度言ってもらい、見張りを続けていることを伝えてください。',
+    sampleAnswerLevel4: 'Say again the traffic position, [callsign].',
+    sampleAnswerLevel5:
+      'Say again the position of the traffic, [callsign] is looking for the traffic.',
+    keyPhrases: ['say again', 'traffic position', 'looking for the traffic'],
+    selfCheckItems: [
+      'トラフィックの位置を聞き返せたか',
+      '見張りを続けている旨を伝えられたか',
+      '見えていないのに「in sight」と言わなかったか',
+    ],
+    safetyNote:
+      '見えていないのに「traffic in sight」と言うのは危険です。位置が曖昧なら聞き返し、視認できるまでは正直に伝えましょう。',
+  },
+  {
+    id: 'sac-015',
+    category: 'say-again-confirm',
+    difficulty: 'basic',
+    situation:
+      '管制官が使った慣用的な言い回しの意味が分かりませんでした。速さではなく表現自体が原因です。',
+    task: '平易な言葉で言い直してもらうよう依頼してください。',
+    sampleAnswerLevel4: 'Say again in plain language, please.',
+    sampleAnswerLevel5:
+      'Say again in plain language, I am not familiar with that phrase, [callsign].',
+    keyPhrases: ['say again', 'plain language', 'not familiar'],
+    selfCheckItems: [
+      '平易な表現への言い換えを依頼できたか',
+      '分からない事実を率直に伝えられたか',
+      '意味を推測して行動しなかったか',
+    ],
+    safetyNote:
+      '知らない表現に出会うのは恥ではありません。意味の推測は誤解のもとです。平易な言い換えを求めるのが安全です。',
+  },
+  {
+    id: 'sac-016',
+    category: 'say-again-confirm',
+    difficulty: 'intermediate',
+    situation:
+      '初回コンタクトで管制官からATISの識別文字に触れられましたが、自分が受信したATISが最新か自信がありません。',
+    task: '自分の持っているATIS情報（例: information Bravo）がまだ有効か確認してください。',
+    sampleAnswerLevel4: 'Confirm information Bravo is current, [callsign].',
+    sampleAnswerLevel5:
+      '[callsign] has information Bravo, confirm it is still current.',
+    keyPhrases: ['information Bravo', 'confirm', 'current'],
+    selfCheckItems: [
+      '自分の持つATIS識別文字を伝えられたか',
+      '最新かどうか確認できたか',
+      '古い情報のまま進めようとしなかったか',
+    ],
+    safetyNote:
+      'ATISが更新されると使用滑走路や気圧設定が変わっていることがあります。識別文字の確認を習慣にしましょう。',
+  },
+  {
+    id: 'sac-017',
+    category: 'say-again-confirm',
+    difficulty: 'advanced',
+    situation:
+      '場周経路で管制官から先行機に続くよう指示されました。パターン内に2機を視認しており、どちらに続くべきか確信が持てません。',
+    task: '2機視認していることを伝え、どちらの機体に続くべきか確認してください。',
+    sampleAnswerLevel4: 'Confirm the traffic to follow, [callsign].',
+    sampleAnswerLevel5:
+      'I have two aircraft in sight. Confirm which traffic to follow, [callsign].',
+    keyPhrases: ['confirm', 'two aircraft in sight', 'which traffic to follow'],
+    selfCheckItems: [
+      '複数機を視認している状況を伝えられたか',
+      'どちらに続くか特定を求められたか',
+      '推測で先行機を決めて続かなかったか',
+    ],
+    safetyNote:
+      '追従する相手機の取り違えは、場周での異常接近や着陸順序の混乱につながります。複数機が見えるときは対象を特定してから続きましょう。',
+  },
+  {
+    id: 'sac-018',
+    category: 'say-again-confirm',
+    difficulty: 'advanced',
+    situation:
+      '同じ周波数に自機と似たコールサインの機体がいます。いま出た降下許可がどちら宛か紛らわしく感じました。',
+    task: '類似コールサインが同じ周波数にいることを伝え、降下許可が自分宛か確認してください。確認の際は省略形ではなくフルコールサインを使います。',
+    sampleAnswerLevel4: 'Verify the descent clearance for [callsign].',
+    sampleAnswerLevel5:
+      'Similar callsign on frequency. Verify the descent clearance for [callsign].',
+    keyPhrases: ['verify', 'similar callsign on frequency', 'descent clearance'],
+    selfCheckItems: [
+      '類似コールサインの存在を指摘できたか',
+      'どの許可についての確認か明示できたか',
+      '省略形ではなくフルコールサインを使って交信したか',
+    ],
+    safetyNote:
+      '類似コールサインは指示の取り違えの典型要因です。紛らわしいときはその旨を伝え、コールサインは省略形ではなく必ずフル形式で名乗って確認しましょう。',
+  },
+  {
+    id: 'sac-019',
+    category: 'say-again-confirm',
+    difficulty: 'basic',
+    situation:
+      'ヘディングを復唱したところ管制官に「Negative」と訂正されましたが、訂正後の正しい数字を聞き逃しました。',
+    task: '復唱が誤っていたことを理解した上で、正しいヘディングをもう一度言ってもらってください。',
+    sampleAnswerLevel4: 'Say again the correct heading, [callsign].',
+    sampleAnswerLevel5:
+      'I understand my readback was wrong, say again the correct heading, [callsign].',
+    keyPhrases: ['say again', 'correct heading', 'readback'],
+    selfCheckItems: [
+      '訂正を受け入れる姿勢を示せたか',
+      '正しい数値を聞き直せたか',
+      '誤った値のまま旋回を始めなかったか',
+    ],
+    safetyNote:
+      '訂正されたときこそ聞き直しの場面です。誤った値のまま操作を始めず、正しい値を確実に受け取りましょう。',
+  },
+  {
+    id: 'sac-020',
+    category: 'say-again-confirm',
+    difficulty: 'intermediate',
+    situation:
+      'タクシー中、前方の滑走路を横断してよいのか手前で待つのか、指示がはっきり聞き取れませんでした。',
+    task: '横断許可が出ているのか手前待機なのかを確認してください。',
+    sampleAnswerLevel4: 'Confirm cleared to cross runway two seven, [callsign].',
+    sampleAnswerLevel5:
+      'Confirm [callsign] is cleared to cross runway two seven, holding short at this time.',
+    keyPhrases: ['confirm', 'cleared to cross', 'holding short'],
+    selfCheckItems: [
+      '横断許可と手前待機を区別して確認できたか',
+      '確認が取れるまで手前で停止していたか',
+      '滑走路番号を添えられたか',
+    ],
+    safetyNote:
+      '滑走路横断の思い込みは誤進入に直結します。許可が確認できるまで必ず手前で待機しましょう。',
+  },
 
   // ===================================================================
   // Unable / Request

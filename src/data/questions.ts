@@ -1761,4 +1761,198 @@ export const QUESTIONS: Question[] = [
     safetyNote:
       '学びを言葉にする習慣は、次のフライトの安全と英語力の両方を支えます。',
   },
+  {
+    id: 'trn-011',
+    category: 'training-plain-english',
+    difficulty: 'basic',
+    situation:
+      '教官または試験官から「今日は何を練習するのか」と尋ねられました。今日は初ソロに向けた離着陸の練習です。',
+    task: '今日の訓練の目的を、自分の言葉で説明してください。',
+    sampleAnswerLevel4: 'Today I will practice takeoffs and landings.',
+    sampleAnswerLevel5:
+      'Today I will practice takeoffs and landings to get ready for my first solo.',
+    keyPhrases: ['practice', 'takeoffs and landings', 'get ready for'],
+    selfCheckItems: [
+      '今日の練習内容を伝えられたか',
+      '目的（何のためか）を添えられたか',
+      '短く自然に言えたか',
+    ],
+    safetyNote:
+      '訓練の目的を言葉にすると、教官との認識合わせにも、自分の準備にも役立ちます。',
+  },
+  {
+    id: 'trn-012',
+    category: 'training-plain-english',
+    difficulty: 'intermediate',
+    situation:
+      '教官または試験官から「今日の天気をどう確認して、飛べる条件だとどう判断したのか」と尋ねられました。',
+    task: '気象の確認内容と、訓練条件としての判断を「確認した情報→根拠→判断」の順で説明してください。',
+    sampleAnswerLevel4:
+      'I checked the weather. The wind is light, and the visibility is good.',
+    sampleAnswerLevel5:
+      "I checked the forecast and current conditions. The wind is light and the visibility is good, so the conditions are acceptable for today's training within our training limits.",
+    keyPhrases: ['checked the weather', 'forecast and current conditions', 'within our training limits'],
+    selfCheckItems: [
+      '何を確認したか言えたか',
+      '根拠（風・視程）を伝えられたか',
+      '「基準の範囲内で訓練条件として問題ない」という形で判断を述べられたか',
+    ],
+    safetyNote:
+      '気象の説明は「確認した情報→根拠→訓練条件としての判断」の順で話すと伝わります。go/no-goの最終判断は自分だけで断定せず、教官・スクールの基準と公式の気象情報に従ってください。',
+  },
+  {
+    id: 'trn-013',
+    category: 'training-plain-english',
+    difficulty: 'intermediate',
+    situation:
+      '予定より早く練習を切り上げて戻ってきました。教官または試験官から「なぜ早く戻ったのか」と尋ねられました。風が強まってきたためです。',
+    task: '練習を早めに切り上げた理由を、自分の言葉で説明してください。',
+    sampleAnswerLevel4:
+      'The wind was getting stronger, so I ended the practice early.',
+    sampleAnswerLevel5:
+      'The wind was picking up and getting close to my personal limit, so I decided to end the practice early and come back.',
+    keyPhrases: ['getting stronger', 'close to my personal limit', 'end the practice early'],
+    selfCheckItems: [
+      '状況の変化（風）を説明できたか',
+      '自分の限界との関係を言えたか',
+      '安全側の判断だと伝えられたか',
+    ],
+    safetyNote:
+      '早めに切り上げる判断は消極的ではなく、優れた判断です。自分の技量の限界（personal limits）を意識し、その設定は教官と相談して決めましょう。',
+  },
+  {
+    id: 'trn-014',
+    category: 'training-plain-english',
+    difficulty: 'basic',
+    situation:
+      '教官または試験官から「なぜ毎回チェックリストを使うのか」と尋ねられました。',
+    task: 'チェックリストを使う理由を、自分の言葉で説明してください。',
+    sampleAnswerLevel4: 'I use the checklist so I do not miss anything.',
+    sampleAnswerLevel5:
+      'I use the checklist every time because it helps me avoid missing important items, even when I am busy.',
+    keyPhrases: ['checklist', 'avoid missing', 'important items'],
+    selfCheckItems: [
+      '理由を自分の言葉で言えたか',
+      '「忙しい時ほど有効」という趣旨を添えられたか',
+      '簡潔に言えたか',
+    ],
+    safetyNote:
+      'チェックリストは記憶に頼らないための道具です。使い方（読み合わせ・フロー後確認など）は機体のPOHと教官の方針に従ってください。',
+  },
+  {
+    id: 'trn-015',
+    category: 'training-plain-english',
+    difficulty: 'intermediate',
+    situation:
+      '着陸操作中に呼びかけへの応答が遅れました。教官または試験官から「なぜすぐ応答しなかったのか」と尋ねられました。',
+    task: '操縦を優先していたことを、自分の言葉で説明してください。',
+    sampleAnswerLevel4:
+      'I was focused on flying the airplane, so my radio response was delayed.',
+    sampleAnswerLevel5:
+      'I was focused on controlling the airplane during a high-workload moment, so I responded when I was able. Flying the airplane comes first.',
+    keyPhrases: ['focused on flying', 'radio response was delayed', 'flying comes first'],
+    selfCheckItems: [
+      '操縦優先の判断を説明できたか',
+      '応答が遅れた事実を客観的に述べられたか',
+      '原則（flying comes first）を言えたか',
+    ],
+    safetyNote:
+      'aviate（操縦）→ navigate（航法）→ communicate（通信）の優先順位は安全の基本です。無線に出られない時間があっても、まず機体を飛ばすことが正しい判断です。',
+  },
+  {
+    id: 'trn-016',
+    category: 'training-plain-english',
+    difficulty: 'basic',
+    situation:
+      '友人から「次のソロ訓練飛行に乗せてほしい」と頼まれました。訓練生は乗客を乗せて機長として飛行できません。',
+    task: '乗せられない理由を、平易な英語で説明してください。',
+    sampleAnswerLevel4:
+      'I am a student pilot, so I cannot carry passengers on a solo flight.',
+    sampleAnswerLevel5:
+      'As a student pilot, I am not allowed to carry passengers when I fly as pilot in command. I need the appropriate pilot certificate and must meet the applicable requirements first.',
+    keyPhrases: ['student pilot', 'carry passengers', 'pilot in command'],
+    selfCheckItems: [
+      '制限の内容を正しく言えたか',
+      '理由（訓練生である）を添えられたか',
+      '角を立てずに断れたか',
+    ],
+    safetyNote:
+      '米国では14 CFR 61.89により、student pilotは乗客を乗せた航空機の機長（PIC）として飛行できません。資格取得後も、乗客を乗せるには適切な資格や最近の飛行経験などの条件を満たす必要があります。詳細は教官と現行の規則で確認してください。',
+  },
+  {
+    id: 'trn-017',
+    category: 'training-plain-english',
+    difficulty: 'intermediate',
+    situation:
+      '教官または試験官から「訓練空域で他機とぶつからないために何をしているか」と尋ねられました。',
+    task: '周囲の交通への注意方法を、自分の言葉で説明してください。',
+    sampleAnswerLevel4: 'I watch for other airplanes and listen to the radio.',
+    sampleAnswerLevel5:
+      'I keep watching for other traffic, listen to the radio calls around me, and make sure the area is clear before each maneuver.',
+    keyPhrases: ['watch for traffic', 'listen to radio calls', 'make sure the area is clear'],
+    selfCheckItems: [
+      '目視の習慣を言えたか',
+      '無線の聞き取りも挙げられたか',
+      '作業前に空域を確認する意識を示せたか',
+    ],
+    safetyNote:
+      '見張り（see and avoid）はVFR飛行の基本責任です。目・耳・作業前の空域確認を組み合わせましょう。具体的な確認方法やclearing turnsの実施は、マニューバー・教官・訓練手順に従ってください。',
+  },
+  {
+    id: 'trn-018',
+    category: 'training-plain-english',
+    difficulty: 'basic',
+    situation:
+      'フライトを終え、教官に機体の状態を伝えます。今日は飛行中に気づいた不具合はありませんでした。',
+    task: '飛行中に確認できた範囲で、機体に問題がなかったことを報告してください。',
+    sampleAnswerLevel4: 'I noticed no problems during the flight.',
+    sampleAnswerLevel5:
+      'The engine and instruments appeared normal, and I noticed nothing unusual during the flight.',
+    keyPhrases: ['noticed no problems', 'appeared normal', 'nothing unusual'],
+    selfCheckItems: [
+      '気づいた範囲の報告だと意識して言えたか',
+      '確認した対象（エンジン・計器）を添えられたか',
+      '問題ない時も報告する習慣を持てたか',
+    ],
+    safetyNote:
+      '「問題に気づかなかった」ことも立派な報告です。これは操縦者が飛行中に確認できた範囲の報告であり、機体の完全な正常性を保証するものではありません。不具合に気づいた場合は些細でも必ず報告・記録し、方法はスクールの手順に従ってください。',
+  },
+  {
+    id: 'trn-019',
+    category: 'training-plain-english',
+    difficulty: 'advanced',
+    situation:
+      '教官または試験官から「今日の燃料計画を説明してください」と口述形式で求められました。1時間の飛行に対し3時間分の燃料を搭載しています。',
+    task: '搭載燃料と、余裕を持たせた理由を説明してください。',
+    sampleAnswerLevel4: 'I have three hours of fuel for a one-hour flight.',
+    sampleAnswerLevel5:
+      'I planned three hours of fuel for a one-hour flight. That gives me a good reserve for weather, delays, or a diversion.',
+    keyPhrases: ['hours of fuel', 'reserve', 'for weather or delays'],
+    selfCheckItems: [
+      '搭載量と飛行時間の関係を言えたか',
+      '余裕（reserve）の目的を説明できたか',
+      '数字を明確に言えたか',
+    ],
+    safetyNote:
+      '燃料は「規則の最低値」ではなく「余裕」で考える習慣が安全を支えます。必要な予備燃料の規則値と計画方法は、教官と公式規則で確認してください。',
+  },
+  {
+    id: 'trn-020',
+    category: 'training-plain-english',
+    difficulty: 'advanced',
+    situation:
+      '教官または試験官から「次のレッスンでは何を良くしたいか」と尋ねられました。横風での着陸がまだ苦手です。',
+    task: '自分の課題と、次に取り組みたいことを説明してください。',
+    sampleAnswerLevel4: 'I want to improve my crosswind landings.',
+    sampleAnswerLevel5:
+      'My crosswind landings are still difficult for me, so next time I want to practice wind correction with my instructor.',
+    keyPhrases: ['improve', 'crosswind landings', 'still difficult', 'practice with my instructor'],
+    selfCheckItems: [
+      '課題を具体的に言えたか',
+      '次の行動（何を練習するか）につなげられたか',
+      '正直に自己評価できたか',
+    ],
+    safetyNote:
+      '苦手の言語化は上達の第一歩です。課題は隠さず教官と共有し、練習計画に反映してもらいましょう。',
+  },
 ];

@@ -263,7 +263,7 @@ export const QUESTIONS: Question[] = [
     task: 'その上昇率では上がれないことを伝え、可能な範囲を示してください。',
     sampleAnswerLevel4: 'Unable that climb rate, best rate only.',
     sampleAnswerLevel5:
-      'Unable the requested climb rate, I can give best rate of climb only.',
+      'Unable the requested climb rate, best rate of climb is all I can give.',
     keyPhrases: ['unable', 'climb rate', 'best rate of climb'],
     selfCheckItems: [
       '性能上の制約を伝えられたか',
@@ -454,7 +454,7 @@ export const QUESTIONS: Question[] = [
     category: 'situation-report',
     difficulty: 'intermediate',
     situation:
-      '指定された地点を通過しました。通過時刻と高度を報告します。',
+      '指定された地点を通過しました。通過地点と高度を報告します。',
     task: '地点通過の報告をしてください。',
     sampleAnswerLevel4: 'Over the lake, three thousand five hundred.',
     sampleAnswerLevel5:
@@ -664,7 +664,7 @@ export const QUESTIONS: Question[] = [
       '着陸の優先を要求できたか',
     ],
     safetyNote:
-      '煙のにおいは軽視できません。状況が悪化する前に早めに優先着陸を求めましょう。',
+      '煙のにおいは軽視できません。状況が悪化する前に早めに優先着陸を求めましょう。煙や火が悪化した場合は、ためらわずMAYDAYに切り替えて緊急事態を宣言してください。実運航では教官・会社・公式手順に従ってください。',
   },
   {
     id: 'abn-005',

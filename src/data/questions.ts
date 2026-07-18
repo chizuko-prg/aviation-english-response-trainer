@@ -1360,6 +1360,204 @@ export const QUESTIONS: Question[] = [
     safetyNote:
       '緊急時は遠慮せず誘導を要求しましょう。管制の支援を最大限活用することが安全につながります。',
   },
+  {
+    id: 'abn-011',
+    category: 'abnormal-emergency',
+    difficulty: 'intermediate',
+    situation:
+      '発電機（オルタネーター）が故障し、バッテリー電源のみで飛行しています。無線が使えるうちに帰投したいです。',
+    task: 'PAN-PANで電気系統の故障を伝え、帰投を要求してください。',
+    sampleAnswerLevel4:
+      'Pan-pan, pan-pan, pan-pan, [callsign], electrical failure, returning to the field.',
+    sampleAnswerLevel5:
+      'Pan-pan, pan-pan, pan-pan, [callsign], alternator failure, on battery power only, returning to the field, request priority handling.',
+    keyPhrases: ['pan-pan', 'electrical failure', 'on battery power', 'request priority'],
+    selfCheckItems: [
+      'PAN-PANで緊急性を伝えられたか',
+      '残っている電源の状況を伝えられたか',
+      '無線が使えるうちに意図を明確にできたか',
+    ],
+    safetyNote:
+      'バッテリーのみの飛行は、無線・計器がいつまで使えるか分かりません。通信できるうちに位置と意図を伝えておくことが重要です。実運航では教官・会社・公式手順に従ってください。',
+  },
+  {
+    id: 'abn-012',
+    category: 'abnormal-emergency',
+    difficulty: 'basic',
+    situation:
+      '離陸直後、ドアのラッチが外れて少し開きました。機体は正常に飛行できており、騒音が大きいだけです。',
+    task: 'ドアが開いたことを伝え、着陸のため場周に戻ることを報告してください。',
+    sampleAnswerLevel4: '[callsign], door open, returning to land.',
+    sampleAnswerLevel5:
+      '[callsign], cabin door open in flight, aircraft is under control, returning for landing.',
+    keyPhrases: ['door open', 'under control', 'returning for landing'],
+    selfCheckItems: [
+      '状況を落ち着いて伝えられたか',
+      '機体がコントロールできている旨を添えられたか',
+      'まず操縦を優先できたか',
+    ],
+    safetyNote:
+      'ドア開放の影響は機種やドアの構造によって異なります。まず機体の操縦を優先し、無理にドアを閉めようとして注意を奪われないようにしましょう。帰投・着陸・機内での操作は、POH・チェックリスト・教官の指示に従ってください。操縦性の悪化、強い振動、構造の損傷などがある場合は、区分を上げて（PAN-PAN等で）支援を求めます。',
+  },
+  {
+    id: 'abn-013',
+    category: 'abnormal-emergency',
+    difficulty: 'intermediate',
+    situation:
+      '上昇中に鳥と衝突しました。機体はコントロールできていますが、翼前縁の損傷の程度が不明です。点検のため帰投します。',
+    task: 'PAN-PANでバードストライクを報告し、帰投を伝えてください。',
+    sampleAnswerLevel4:
+      'Pan-pan, pan-pan, pan-pan, [callsign], bird strike, returning to land.',
+    sampleAnswerLevel5:
+      'Pan-pan, pan-pan, pan-pan, [callsign], bird strike on the left wing, aircraft controllable, returning for landing, request priority.',
+    keyPhrases: ['pan-pan', 'bird strike', 'controllable', 'request priority'],
+    selfCheckItems: [
+      '衝突の事実と部位を伝えられたか',
+      '操縦できている状態を伝えられたか',
+      '損傷不明のまま飛行を続けなかったか',
+    ],
+    safetyNote:
+      '衝突後は損傷の全体が見えないことが多く、見た目以上の損傷があり得ます。早めに着陸して点検しましょう。操縦に支障が出た場合は、ためらわずMAYDAYへ切り替えてください。',
+  },
+  {
+    id: 'abn-014',
+    category: 'abnormal-emergency',
+    difficulty: 'intermediate',
+    situation:
+      '着陸準備中、フラップが作動しません。フラップなしで着陸するため、進入速度が速くなり、着陸距離が延びます。',
+    task: 'フラップの不具合と、フラップなしで着陸する意図を報告してください。',
+    sampleAnswerLevel4: '[callsign], flaps inoperative, will make a no-flap landing.',
+    sampleAnswerLevel5:
+      '[callsign], flaps inoperative, making a no-flap landing, expect a faster approach and longer landing roll.',
+    keyPhrases: ['flaps inoperative', 'no-flap landing', 'longer landing roll'],
+    selfCheckItems: [
+      '不具合の内容を伝えられたか',
+      '着陸方法の変化（速度・距離）を予告できたか',
+      '通常と違う進入になることを管制と共有できたか',
+    ],
+    safetyNote:
+      'フラップなし着陸で必要となる速度と距離は、機種・風・重量・滑走路条件によって変わります。着陸の余裕に不安がある場合は、PAN-PANも含めて早めに支援を求めましょう。機体の操作はPOH・チェックリスト・教官の指示に従ってください。',
+  },
+  {
+    id: 'abn-015',
+    category: 'abnormal-emergency',
+    difficulty: 'basic',
+    situation:
+      'フライトフォローイングを受けて飛行中、管制官から自機のトランスポンダ信号が消えたと言われました。機上でも故障表示が出ています。',
+    task: 'トランスポンダが故障したことを伝えてください。',
+    sampleAnswerLevel4: '[callsign], transponder appears inoperative.',
+    sampleAnswerLevel5:
+      '[callsign], transponder failure indicated on board, transponder appears inoperative, request instructions.',
+    keyPhrases: ['transponder inoperative', 'failure indicated', 'request instructions'],
+    selfCheckItems: [
+      '故障の事実を伝えられたか',
+      '機上の表示状況を添えられたか',
+      '管制の指示を求める姿勢を示せたか',
+    ],
+    safetyNote:
+      'トランスポンダ故障は識別・監視に影響しますが、機体の飛行そのものには影響しません。落ち着いて報告し、管制と調整しましょう。空域によっては継続に許可が必要な場合があります。教官・現地手順に従ってください。',
+  },
+  {
+    id: 'abn-016',
+    category: 'abnormal-emergency',
+    difficulty: 'advanced',
+    situation:
+      '管制の声が全く聞こえなくなりました。自分の送信が届いているかは不明です。受信機の故障を疑い、位置と意図を一方的に送信します。',
+    task: '受信機故障の疑いを伝え、ブラインド送信で位置と意図を放送してください。',
+    sampleAnswerLevel4:
+      'Transmitting in the blind due to receiver failure, [callsign], returning to the field.',
+    sampleAnswerLevel5:
+      'Transmitting in the blind due to receiver failure, [callsign], five miles south at three thousand, returning to the field for landing. I say again, five miles south at three thousand, returning for landing.',
+    keyPhrases: ['transmitting in the blind', 'receiver failure', 'I say again'],
+    selfCheckItems: [
+      'ブラインド送信であることを冒頭で宣言できたか',
+      '位置・高度・意図を伝えられたか',
+      '重要部分を繰り返して伝わりやすくしたか',
+    ],
+    safetyNote:
+      '受信できなくても送信が届いている可能性があります。「transmitting in the blind」を冒頭に置き、位置と意図を伝えましょう。この例文の形式や全文の繰り返しは伝わりやすくするための一例であり、米国内で常に必須の手順という意味ではありません。実際の通信故障時は、FAAの通信故障手順（スコーク等）・タワーからのライトシグナル・POH・教官の指示に従ってください。',
+  },
+  {
+    id: 'abn-017',
+    category: 'abnormal-emergency',
+    difficulty: 'intermediate',
+    situation:
+      '同乗者の体調が急激に悪化しています。操縦には支障ありませんが、早く着陸して医療支援を受けさせたいです。',
+    task: 'PAN-PANで同乗者の状態を伝え、優先着陸と地上での医療支援を要求してください。',
+    sampleAnswerLevel4:
+      'Pan-pan, pan-pan, pan-pan, [callsign], passenger is ill, request priority landing.',
+    sampleAnswerLevel5:
+      'Pan-pan, pan-pan, pan-pan, [callsign], passenger seriously ill, pilot is not affected, request priority landing and medical assistance on the ground.',
+    keyPhrases: ['pan-pan', 'passenger ill', 'priority landing', 'medical assistance'],
+    selfCheckItems: [
+      '誰の状態か（操縦士ではなく同乗者）を明確にできたか',
+      '優先着陸を要求できたか',
+      '地上の医療支援まで要求できたか',
+    ],
+    safetyNote:
+      '同乗者の急病は迷わずPAN-PANで支援を求めましょう。操縦士自身に影響がないことも伝えると、管制の状況判断を助けます。状態が生命に関わると判断したらMAYDAYへの切り替えをためらわないでください。',
+  },
+  {
+    id: 'abn-018',
+    category: 'abnormal-emergency',
+    difficulty: 'basic',
+    situation:
+      'ソロでのクロスカントリー訓練中、地形が予想と合わず、自機の位置に自信が持てなくなりました。燃料には余裕があります。',
+    task: 'PAN-PANで位置がわからないことを伝え、支援を求めてください。',
+    sampleAnswerLevel4:
+      'Pan-pan, pan-pan, pan-pan, [callsign], student pilot, unsure of position, request assistance.',
+    sampleAnswerLevel5:
+      'Pan-pan, pan-pan, pan-pan, [callsign], student pilot, unsure of position, last known position over the lake at one five two zero Zulu, heading west, three thousand five hundred, fuel two hours, request assistance.',
+    keyPhrases: ['pan-pan', 'unsure of position', 'last known position', 'request assistance'],
+    selfCheckItems: [
+      'PAN-PANで支援の必要性を伝えられたか',
+      '最後の確実な位置・時刻・その後の針路を伝えられたか',
+      '高度と燃料を添えられたか',
+    ],
+    safetyNote:
+      '位置に疑念を持った時点で、早めに支援を求めましょう。操縦と安全な経路の維持を優先しながら、わかる範囲で最後の確実な位置・その時刻・その後の針路・高度・燃料を伝えます。実際の対応は教官・公式手順に従ってください。',
+  },
+  {
+    id: 'abn-019',
+    category: 'abnormal-emergency',
+    difficulty: 'advanced',
+    situation:
+      'エンジンから炎が見えています。生命に差し迫った危険があり、直ちに着陸が必要です。',
+    task: 'MAYDAYでエンジン火災を宣言し、位置と意図を伝えてください。',
+    sampleAnswerLevel4:
+      'Mayday, mayday, mayday, [callsign], engine fire, landing immediately.',
+    sampleAnswerLevel5:
+      'Mayday, mayday, mayday, [callsign], engine fire, landing immediately, five miles south of the field at two thousand, two persons on board.',
+    keyPhrases: ['mayday', 'engine fire', 'landing immediately', 'persons on board'],
+    selfCheckItems: [
+      'MAYDAYを3回繰り返せたか',
+      '火災の事実と着陸の意図を最初に伝えられたか',
+      '位置・搭乗者数まで伝えられたか',
+    ],
+    safetyNote:
+      '火災は最も切迫した緊急事態のひとつです。ためらわずMAYDAYを宣言し、機上の火災対処手順と着陸を最優先してください。無線は操縦と手順の合間に行うものです。実運航では教官・会社・公式手順（チェックリスト）に従ってください。',
+  },
+  {
+    id: 'abn-020',
+    category: 'abnormal-emergency',
+    difficulty: 'basic',
+    situation:
+      '巡航中、緊急周波数121.5MHzを聞いていたところ、ELT（航空機用救命無線機）の信号音が聞こえました。管制へ知らせます。',
+    task: 'ELT信号を受信したことを報告してください。',
+    sampleAnswerLevel4:
+      '[callsign], receiving an ELT signal on one two one point five.',
+    sampleAnswerLevel5:
+      '[callsign], receiving an ELT signal on one two one point five, first heard at one five two zero Zulu, ten miles south of the field at four thousand five hundred, signal strong.',
+    keyPhrases: ['ELT signal', 'one two one point five', 'first heard', 'signal strong'],
+    selfCheckItems: [
+      '受信した周波数を伝えられたか',
+      '最初に聞いた時刻と位置を伝えられたか',
+      '高度を添えられたか',
+      '信号の強さを伝えられたか',
+    ],
+    safetyNote:
+      'ELT信号の報告は、どこかで助けを待つ人の捜索救助を早める行動です。聞こえ続ける場合は、最後に聞いた位置や信号が最も強かった位置も追加で報告しましょう。飛行中の121.5MHzの監視は推奨されており、聞こえた場合はATCへ報告します。また、飛行終了前に自機のELTが誤作動していないか確認する習慣も大切です。詳細は公式のFAA AIMに従ってください。',
+  },
 
   // ===================================================================
   // Training Flight Plain English

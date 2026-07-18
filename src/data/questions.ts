@@ -577,6 +577,197 @@ export const QUESTIONS: Question[] = [
     safetyNote:
       '習熟度に不安がある方式は無理に受けず、安全に行える方法を要求しましょう。',
   },
+  {
+    id: 'unr-011',
+    category: 'unable-request',
+    difficulty: 'basic',
+    situation:
+      '上昇を指示されましたが、その高度では雲に入ってしまい、VFRを維持できません。',
+    task: '雲を理由に上昇できないことを伝え、現在高度の維持を要求してください。',
+    sampleAnswerLevel4: 'Unable to climb due to clouds, [callsign].',
+    sampleAnswerLevel5:
+      'Unable to climb due to clouds, request to maintain three thousand five hundred, [callsign].',
+    keyPhrases: ['unable', 'due to clouds', 'maintain'],
+    selfCheckItems: [
+      '雲が理由だと伝えられたか',
+      '維持したい高度を具体的に示せたか',
+      'VFRを崩してまで指示に従わなかったか',
+    ],
+    safetyNote:
+      'VFRでの雲への進入は空間識失調や衝突につながる重大な危険です。維持できない指示には明確にUnableを伝えましょう。',
+  },
+  {
+    id: 'unr-012',
+    category: 'unable-request',
+    difficulty: 'basic',
+    situation:
+      '現在の高度で継続的な乱気流に遭遇しています。より揺れの少ない高度に変えたいです。',
+    task: '乱気流を理由に、低い高度を要求してください。',
+    sampleAnswerLevel4: 'Request lower altitude due to turbulence, [callsign].',
+    sampleAnswerLevel5:
+      'Request lower altitude due to turbulence, the ride is rough at four thousand five hundred, [callsign].',
+    keyPhrases: ['request lower', 'due to turbulence', 'rough ride'],
+    selfCheckItems: [
+      '高度変更の要求を明確に伝えられたか',
+      '理由（乱気流）を添えられたか',
+      '揺れを我慢して飛び続けなかったか',
+    ],
+    safetyNote:
+      '乱気流の中を無理に飛び続ける必要はありません。高度変更は正当な要求です。強い揺れは他機のためにも早めに報告しましょう。',
+  },
+  {
+    id: 'unr-013',
+    category: 'unable-request',
+    difficulty: 'intermediate',
+    situation:
+      '着陸時に、交差滑走路の手前で停止することを条件とする着陸（LAHSO: land and hold short operations）を求められましたが、訓練生として受けられません。',
+    task: 'LAHSOを受けられないことを伝え、滑走路全長の使用を要求してください。',
+    sampleAnswerLevel4: 'Unable LAHSO, request full runway, [callsign].',
+    sampleAnswerLevel5:
+      'Unable LAHSO, student pilot, request full runway, [callsign].',
+    keyPhrases: ['unable', 'LAHSO', 'full runway'],
+    selfCheckItems: [
+      'LAHSOを受けない判断ができたか',
+      '滑走路全長の使用を要求できたか',
+      'student pilotであることを管制に伝えられたか',
+    ],
+    safetyNote:
+      'LAHSOの受諾は義務ではありません。student pilotはLAHSOに参加しないこととされており、管制にstudent pilotと伝えていればATCはLAHSO clearanceを発出しません。不慣れな場合や少しでも不安がある場合も、受諾せず断りましょう。',
+  },
+  {
+    id: 'unr-014',
+    category: 'unable-request',
+    difficulty: 'basic',
+    situation:
+      'タッチアンドゴーを繰り返してきましたが、疲れを感じてきました。次の着陸で練習を終えたいです。',
+    task: '次の着陸をフルストップにしたいと伝えてください。',
+    sampleAnswerLevel4: 'Request full stop this time, [callsign].',
+    sampleAnswerLevel5:
+      'Request full stop, we are finishing pattern work, [callsign].',
+    keyPhrases: ['request', 'full stop', 'pattern work'],
+    selfCheckItems: [
+      'フルストップの意図を伝えられたか',
+      '練習終了の意図を添えられたか',
+      '疲労のサインを無視して続けなかったか',
+    ],
+    safetyNote:
+      '疲労を感じたら練習を切り上げるのが安全の基本です。「もう1周」を重ねるより、早めのフルストップを選びましょう。',
+  },
+  {
+    id: 'unr-015',
+    category: 'unable-request',
+    difficulty: 'intermediate',
+    situation:
+      'タクシー中に「expedite（急いで）」と指示されましたが、訓練生として安全に急ぐことができません。',
+    task: '急げないことを伝え、慎重に進んでいることを伝えてください。',
+    sampleAnswerLevel4: 'Unable to expedite, [callsign].',
+    sampleAnswerLevel5:
+      'Unable to expedite, [callsign] is a student pilot, taxiing with caution.',
+    keyPhrases: ['unable', 'expedite', 'with caution'],
+    selfCheckItems: [
+      '急げないことを明確に伝えられたか',
+      '理由（訓練生）を添えられたか',
+      '急かされてタクシーの確実性を落とさなかったか',
+    ],
+    safetyNote:
+      '「expedite」に無理に応じると、経路の取り違えや滑走路誤進入のリスクが上がります。安全に急げないときはUnableと伝え、確実に進みましょう。',
+  },
+  {
+    id: 'unr-016',
+    category: 'unable-request',
+    difficulty: 'basic',
+    situation:
+      '訓練空域への往復で、レーダーによる交通情報の提供（VFRフライトフォローイング）を受けたいです。',
+    task: 'フライトフォローイングを要求してください。',
+    sampleAnswerLevel4: 'Request VFR flight following, [callsign].',
+    sampleAnswerLevel5:
+      'Request VFR flight following to the practice area at four thousand five hundred, [callsign].',
+    keyPhrases: ['request', 'flight following', 'practice area'],
+    selfCheckItems: [
+      'フライトフォローイングを要求できたか',
+      '行き先と高度を添えられたか',
+      '続けて伝えるべき情報（機種・位置など）を意識できたか',
+    ],
+    safetyNote:
+      '実際の初回要求では、コールサインと機種・現在位置・高度・目的地（または飛行方向・経路）を続けて伝えます。またこのサービスは管制官の業務量に余裕がある場合（workload permitting）に提供されるもので、常に受けられるとは限りません。追加の安全網として、受けられるときは積極的に活用しましょう。',
+  },
+  {
+    id: 'unr-017',
+    category: 'unable-request',
+    difficulty: 'intermediate',
+    situation:
+      'タワーから「make short approach」を求められましたが、まだ練習したことがなく、安全に実施できません。',
+    task: 'ショートアプローチができないことを伝え、通常の場周を要求してください。',
+    sampleAnswerLevel4: 'Unable short approach, request normal pattern, [callsign].',
+    sampleAnswerLevel5:
+      'Unable short approach, we have not practiced that yet, request normal pattern, [callsign].',
+    keyPhrases: ['unable', 'short approach', 'normal pattern'],
+    selfCheckItems: [
+      'できない操作を明確に断れたか',
+      '代替案（通常の場周）を要求できたか',
+      '未習熟の操作を引き受けなかったか',
+    ],
+    safetyNote:
+      '習っていない操作を管制の求めに応じて引き受ける必要はありません。Unableと代替案のセットで応じるのが安全です。',
+  },
+  {
+    id: 'unr-018',
+    category: 'unable-request',
+    difficulty: 'advanced',
+    situation:
+      '離陸位置で即時離陸を求められました。ファイナルに接近機が見えており、急いだ離陸には不安があります。',
+    task: '即時離陸に応じられないことを伝え、待機する意図を伝えてください。',
+    sampleAnswerLevel4: 'Unable immediate takeoff, [callsign].',
+    sampleAnswerLevel5:
+      'Unable immediate takeoff, we will hold short and wait for the traffic on final, [callsign].',
+    keyPhrases: ['unable', 'immediate takeoff', 'hold short'],
+    selfCheckItems: [
+      '即時離陸に応じられないことを明確に伝えられたか',
+      '待機する意図を伝えられたか',
+      '時間的圧力に流されなかったか',
+    ],
+    safetyNote:
+      '安全に即応できない場合は、ためらわずUnableと伝えましょう。急かされての離陸は滑走路上の重大リスクに直結します。準備と確認が整ってから離陸することを優先してください。',
+  },
+  {
+    id: 'unr-019',
+    category: 'unable-request',
+    difficulty: 'advanced',
+    situation:
+      '訓練空域でエアワーク（上下の動きを伴う訓練）を行うため、使用する高度範囲を管制に共有し、要求したいです。',
+    task: '訓練で使う高度範囲を平易な英語で伝え、要求してください。',
+    sampleAnswerLevel4:
+      'Request maneuvering between three thousand and five thousand in the practice area, [callsign].',
+    sampleAnswerLevel5:
+      'Request maneuvering between three thousand and five thousand for training, remaining in the practice area, [callsign].',
+    keyPhrases: ['request', 'maneuvering between', 'practice area'],
+    selfCheckItems: [
+      '使用する高度範囲を明確に伝えられたか',
+      '訓練目的を添えられたか',
+      '空域内に留まる意図を示せたか',
+    ],
+    safetyNote:
+      '管制が応答しても、その高度帯や空域を自機だけが占有できるという意味ではありません。VFRの気象条件の維持・見張り・衝突回避の責任は操縦者に残ります。実際の運用は教官・現地の手順に従ってください。',
+  },
+  {
+    id: 'unr-020',
+    category: 'unable-request',
+    difficulty: 'intermediate',
+    situation:
+      '先行する大型機が離陸しました。後方乱気流を避けるため、少し待ってから離陸したいです。',
+    task: '後方乱気流を理由に、離陸前の追加の間隔を要求してください。',
+    sampleAnswerLevel4: 'Request additional delay for wake turbulence, [callsign].',
+    sampleAnswerLevel5:
+      'Request two minutes for wake turbulence behind the departing aircraft, [callsign].',
+    keyPhrases: ['request', 'additional delay', 'wake turbulence'],
+    selfCheckItems: [
+      '追加間隔の要求を明確に伝えられたか',
+      '理由（後方乱気流）を添えられたか',
+      '要求を滑走路に入る前に伝えられたか',
+    ],
+    safetyNote:
+      '後方乱気流の追加間隔は自分から要求できます。2分は一例であり、すべての状況に一律に当てはまる数字ではありません。機体区分・離陸開始位置・運用条件によって必要な間隔は変わります。要求はできるだけ早く、少なくとも滑走路に入る前に伝えましょう。',
+  },
 
   // ===================================================================
   // Situation Report

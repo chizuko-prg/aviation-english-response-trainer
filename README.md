@@ -2,6 +2,37 @@
 
 Aviation English Response Trainer
 
+## English Overview
+
+**Aviation English Response Trainer** is a web application for practicing spoken
+responses in aviation English.
+
+Rather than listening comprehension, it focuses on **output**: you read a
+situation and a task presented in Japanese, say your own answer out loud, and
+then compare it with sample answers, key phrases, self-check items, and a safety
+note.
+
+- **100 scenario-based questions** across 5 categories (20 each): Say Again /
+  Confirm, Unable / Request, Situation Report, Abnormal / Emergency, and
+  Training Flight Plain English
+- Two sample answers per question (ICAO Level 4 and Level 5 oriented), showing
+  that **more than one natural answer is possible** for the same situation
+- Designed for smartphones; installable to the home screen as a web app
+- No account and no backend. Anonymous usage analytics may be collected for
+  service improvement.
+
+**This project is for educational and self-study use only.** It is not an
+official ICAO aviation English proficiency assessment tool and does not
+guarantee any test result or certification. It must **not** be used for actual
+flight operations or operational decision-making. Always follow your instructor,
+your organization's regulations, and official procedures.
+
+Live app: https://aviation-english-response-trainer.vercel.app
+(User interface and question text are in Japanese; sample answers are in English.)
+
+Licensing, contribution guidelines, and notes on how the content was prepared are
+described in the English sections at the end of this document.
+
 ## 1. 概要
 
 航空英語の「応答」を練習するための Web アプリです。
@@ -173,3 +204,117 @@ Vercel でホスティングしています（GitHub リポジトリの homepage
 - 問題文・回答例の内容については、`docs/audit-summary-2026-07-16.md` に監査の記録があります（2026-07-16 時点、当時の 50 問を対象としたものです）。
 - 今後は、問題文・回答例の記述の誤りの修正、表現の見直し、UI の使いやすさの改善といった品質改善を想定しています。
 - 具体的な機能追加のロードマップは本リポジトリ内に定義されていないため、本 README では記載していません。
+
+---
+
+## About the Educational Content
+
+This content was created for aviation English education, with a focus on learners
+preparing for flight training.
+
+**How it was prepared**
+
+- Safety-related descriptions were written with reference to publicly available
+  sources, including official aviation information manuals and applicable
+  regulations, and were checked against those sources before being adopted.
+- The question set was reviewed for internal consistency: how each category
+  handles its role, whether sample answers match the situation described, and
+  whether safety notes agree with one another.
+- Where a procedure varies by aircraft, operator, or region, the content
+  deliberately does not state a single answer. It defers to the POH, checklists,
+  the instructor, and local procedures.
+
+**Limitations**
+
+- Sample answers are reference examples, not the only correct answers.
+- The labels "Level 4" and "Level 5" are used for convenience. ICAO levels
+  describe a speaker's proficiency, not the rating of an individual sentence.
+- Regulations and procedures change. Always verify against current official
+  sources.
+- This is practice material, not a substitute for official guidance or
+  instruction.
+
+**Reporting a content issue**
+
+If you find an error, please open an issue with the question ID and, where
+possible, a reference to an official or public source supporting the correction.
+Proposals with a stated basis can be reviewed and acted on much faster. See
+[CONTRIBUTING.md](CONTRIBUTING.md).
+
+A record of one content review is kept in
+[`docs/audit-summary-2026-07-16.md`](docs/audit-summary-2026-07-16.md)
+(dated 2026-07-16, covering the 50 questions in the set at that time).
+
+## License
+
+This repository uses **two different licenses**, because it contains both
+software and educational content.
+
+| Part | License | What it covers |
+| --- | --- | --- |
+| Software code | [MIT License](LICENSE) | Application code, type definitions, configuration and build files, icon assets |
+| Educational content | [CC BY-NC 4.0](LICENSE-CONTENT.md) | Question text, sample answers, key phrases, self-check items, safety notes, category descriptions, and the audit record under `docs/` |
+
+**In short:** you may use, modify, and redistribute the code freely, including
+commercially. The educational content may be shared and adapted for
+**non-commercial** purposes with appropriate credit.
+
+The educational content is stored mainly in `src/data/questions.ts`, with
+category definitions in `src/types.ts`. See
+[LICENSE-CONTENT.md](LICENSE-CONTENT.md) for the full scope, attribution
+requirements, and notes on adapting safety-related descriptions.
+
+If you would like to use the educational content commercially, please open an
+issue to discuss it.
+
+## Contributing
+
+Contributions are welcome. Because part of this project relates to aviation
+safety, contributions are handled in two ways depending on what they touch.
+
+**Pull requests are welcome for:** bug fixes, UI and usability improvements,
+accessibility, mobile and browser compatibility, performance, refactoring, build
+tooling, and documentation (including English translation).
+
+**Changes to aviation terminology, question content, sample answers, and
+safety-related descriptions are reviewed carefully.** For these, please **open an
+issue first** instead of sending a pull request, and include the question ID, the
+proposed change, and the reason - ideally with a reference to an official or
+public source. Sample answers and safety notes were written to be consistent
+across the whole question set, so a small wording change can affect more than one
+question.
+
+Reports of factual errors are valuable even without a proposed rewrite. If you
+find something that is wrong or misleading, please tell us.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details, including the policy on
+distinguishing the official version from derivative versions.
+
+## AI-Assisted Development
+
+This project was developed using an AI-assisted workflow. AI coding assistants
+were used for:
+
+- **Implementation support** - writing and refactoring application code
+- **Review support** - checking consistency across the question set, finding
+  contradictions, and cross-checking terminology
+- **Documentation support** - drafting and organizing documentation
+
+**Human judgment remained responsible for:**
+
+- Final design decisions and the scope of the project
+- **All safety-related policy** - how MAYDAY, PAN-PAN, and normal reports are
+  distinguished, what is stated as fact, and what is deferred to official
+  procedures
+- Verifying aviation content against public sources before adopting it
+- Deciding what to accept, revise, or reject
+
+AI-generated wording was not adopted as-is for aviation content. Suggestions were
+reviewed, corrected, and in some cases rejected - for example, phrasing that
+sounded natural but did not match how a procedure is actually used, or wording
+that stated something more definitively than the source material supports.
+
+Note that this section describes the development process. **The application
+itself contains no AI features** - there is no automatic grading and no AI
+evaluation of your answers. The app presents fixed sample answers for you to
+compare against your own spoken response.

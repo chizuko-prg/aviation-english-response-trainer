@@ -11,9 +11,9 @@ export const QUESTIONS: Question[] = [
     situation:
       'タワーから周波数の変更指示を受けましたが、数字の一部が聞き取れませんでした。',
     task: '聞き取れなかったことを伝え、もう一度言ってもらうよう依頼してください。',
-    sampleAnswerLevel4: 'Say again the frequency, please.',
+    sampleAnswerLevel4: 'Say again the frequency, please, [callsign].',
     sampleAnswerLevel5:
-      'Tower, say again the frequency, I did not copy the last part.',
+      'Tower, say again the frequency, I did not copy the last part, [callsign].',
     keyPhrases: ['say again', 'I did not copy', 'the last part'],
     selfCheckItems: [
       '「Say again」を正しく使えたか',
@@ -28,11 +28,12 @@ export const QUESTIONS: Question[] = [
     category: 'say-again-confirm',
     difficulty: 'intermediate',
     situation:
-      'グランドから滑走路までのタクシー経路を指示されましたが、経由するtaxiwayが正しいか確信が持てません。',
+      'グランドから「taxiway Alpha、Bravoを経由して滑走路34へ、Charlie手前で待機」と指示されましたが、経由するtaxiwayが正しいか確信が持てません。',
     task: '自分の理解した経路を述べ、それで合っているか確認してください。',
-    sampleAnswerLevel4: 'Confirm taxi via Alpha and Bravo to runway three four.',
+    sampleAnswerLevel4:
+      'Confirm taxi via Alpha and Bravo to runway three four, [callsign].',
     sampleAnswerLevel5:
-      'Ground, confirm taxi via Alpha, Bravo to runway three four, holding short of Charlie.',
+      'Ground, confirm taxi via Alpha, Bravo to runway three four, holding short of Charlie, [callsign].',
     keyPhrases: ['confirm', 'taxi via', 'holding short of'],
     selfCheckItems: [
       '「Confirm」で確認の意図を示せたか',
@@ -49,10 +50,10 @@ export const QUESTIONS: Question[] = [
     situation:
       '管制官の送信が速く、こちらに対する指示なのか他機への指示なのか分かりませんでした。',
     task: '今のは自分宛だったのか確認してください。',
-    sampleAnswerLevel4: 'Was that call for me?',
+    sampleAnswerLevel4: 'Confirm that was for [callsign].',
     sampleAnswerLevel5:
-      'Confirm the last instruction was for my aircraft.',
-    keyPhrases: ['confirm', 'last instruction', 'for my aircraft'],
+      'Confirm the last instruction was for [callsign], the transmission was fast.',
+    keyPhrases: ['confirm', 'last instruction', 'was for'],
     selfCheckItems: [
       '自分宛か確認する意図を伝えられたか',
       '短く明確に聞けたか',
@@ -66,11 +67,11 @@ export const QUESTIONS: Question[] = [
     category: 'say-again-confirm',
     difficulty: 'intermediate',
     situation:
-      '上昇高度を指示されましたが、聞き取った数字に自信がありません。',
+      '上昇高度を指示され、五千フィートと聞こえましたが、聞き取った数字に自信がありません。',
     task: '自分が聞き取った高度を述べ、合っているか確認してください。',
-    sampleAnswerLevel4: 'Confirm climb to five thousand.',
+    sampleAnswerLevel4: 'Confirm climb to five thousand, [callsign].',
     sampleAnswerLevel5:
-      'Confirm climb and maintain five thousand, I want to verify the altitude.',
+      'Confirm climb and maintain five thousand, I want to verify the altitude, [callsign].',
     keyPhrases: ['confirm', 'climb and maintain', 'verify'],
     selfCheckItems: [
       '聞き取った高度を声に出して確認できたか',
@@ -86,10 +87,10 @@ export const QUESTIONS: Question[] = [
     difficulty: 'basic',
     situation: '管制官が早口で、全体的に聞き取れませんでした。',
     task: 'もっとゆっくり話してもらうよう依頼してください。',
-    sampleAnswerLevel4: 'Speak slower, please.',
+    sampleAnswerLevel4: 'Say again slowly, please, [callsign].',
     sampleAnswerLevel5:
-      'Say again slowly, please, I am a student pilot.',
-    keyPhrases: ['speak slower', 'say again slowly', 'student pilot'],
+      'Say again slowly, please, I am a student pilot, [callsign].',
+    keyPhrases: ['say again slowly', 'slowly please', 'student pilot'],
     selfCheckItems: [
       'ゆっくり話す依頼を伝えられたか',
       '丁寧に依頼できたか',
@@ -105,9 +106,9 @@ export const QUESTIONS: Question[] = [
     situation:
       'スコークコード（トランスポンダ）の設定を指示されましたが、数字を聞き逃しました。',
     task: 'スコークコードをもう一度言ってもらうよう依頼してください。',
-    sampleAnswerLevel4: 'Say again the squawk code.',
+    sampleAnswerLevel4: 'Say again the squawk code, [callsign].',
     sampleAnswerLevel5:
-      'Say again the squawk, I did not get the four digits.',
+      'Say again the squawk, I did not get the four digits, [callsign].',
     keyPhrases: ['say again', 'squawk', 'four digits'],
     selfCheckItems: [
       'スコークの聞き返しができたか',
@@ -142,9 +143,9 @@ export const QUESTIONS: Question[] = [
     category: 'say-again-confirm',
     difficulty: 'basic',
     situation:
-      '着陸許可が出たように聞こえましたが、確信が持てません。',
+      '滑走路34への進入中、着陸許可が出たように聞こえましたが、確信が持てません。',
     task: '着陸許可が出ているか確認してください。',
-    sampleAnswerLevel4: 'Confirm cleared to land runway three four.',
+    sampleAnswerLevel4: 'Confirm cleared to land runway three four, [callsign].',
     sampleAnswerLevel5:
       'Tower, confirm [callsign] is cleared to land runway three four, I did not catch a clear reply.',
     keyPhrases: ['confirm', 'cleared to land', 'runway'],
@@ -163,9 +164,9 @@ export const QUESTIONS: Question[] = [
     situation:
       '管制官の指示の意味は分かりましたが、自分の復唱が正しかったか反応がなく不安です。',
     task: '自分の復唱が正しかったか確認してください。',
-    sampleAnswerLevel4: 'Confirm my readback is correct.',
+    sampleAnswerLevel4: 'Confirm my readback is correct, [callsign].',
     sampleAnswerLevel5:
-      'Confirm my readback was correct, no response received.',
+      'Confirm my readback was correct, no response received, [callsign].',
     keyPhrases: ['confirm', 'readback', 'correct'],
     selfCheckItems: [
       '復唱の確認を求められたか',
@@ -182,9 +183,9 @@ export const QUESTIONS: Question[] = [
     situation:
       '風向風速とともに滑走路変更を告げられましたが、新しい滑走路番号が聞き取れませんでした。',
     task: '風の情報は分かったが滑走路番号だけ確認したい、と伝えてください。',
-    sampleAnswerLevel4: 'Confirm the new runway, I got the wind.',
+    sampleAnswerLevel4: 'Confirm the new runway, I got the wind, [callsign].',
     sampleAnswerLevel5:
-      'I copied the wind, confirm the new landing runway, please.',
+      'I copied the wind, confirm the new landing runway, please, [callsign].',
     keyPhrases: ['I copied the wind', 'confirm', 'landing runway'],
     selfCheckItems: [
       '分かった情報と不明な情報を切り分けられたか',
@@ -218,7 +219,7 @@ export const QUESTIONS: Question[] = [
     category: 'say-again-confirm',
     difficulty: 'intermediate',
     situation:
-      '滑走路手前で「line up and wait」と聞こえましたが、離陸許可まで出たのか確信が持てません。',
+      '滑走路34の手前で「line up and wait」と聞こえましたが、離陸許可まで出たのか確信が持てません。',
     task: '離陸許可ではなく滑走路上での待機のみであることを確認してください。',
     sampleAnswerLevel4: 'Confirm line up and wait runway three four, [callsign].',
     sampleAnswerLevel5:
@@ -277,7 +278,7 @@ export const QUESTIONS: Question[] = [
     situation:
       '管制官が使った慣用的な言い回しの意味が分かりませんでした。速さではなく表現自体が原因です。',
     task: '平易な言葉で言い直してもらうよう依頼してください。',
-    sampleAnswerLevel4: 'Say again in plain language, please.',
+    sampleAnswerLevel4: 'Say again in plain language, please, [callsign].',
     sampleAnswerLevel5:
       'Say again in plain language, I am not familiar with that phrase, [callsign].',
     keyPhrases: ['say again', 'plain language', 'not familiar'],
@@ -370,7 +371,7 @@ export const QUESTIONS: Question[] = [
     category: 'say-again-confirm',
     difficulty: 'intermediate',
     situation:
-      'タクシー中、前方の滑走路を横断してよいのか手前で待つのか、指示がはっきり聞き取れませんでした。',
+      'タクシー中、前方の滑走路27を横断してよいのか手前で待つのか、指示がはっきり聞き取れませんでした。',
     task: '横断許可が出ているのか手前待機なのかを確認してください。',
     sampleAnswerLevel4: 'Confirm cleared to cross runway two seven, [callsign].',
     sampleAnswerLevel5:
@@ -393,11 +394,11 @@ export const QUESTIONS: Question[] = [
     category: 'unable-request',
     difficulty: 'basic',
     situation:
-      'アプローチから指示された高度への降下を、現在の状況ではすぐに開始できません。',
+      'アプローチから指示された高度への降下を、現在の状況ではすぐに開始できません。あと2マイルほど進んでから降下を開始したいです。',
     task: 'その指示に従えないことを伝えてください。',
-    sampleAnswerLevel4: 'Unable to descend at this time.',
+    sampleAnswerLevel4: 'Unable to descend at this time, [callsign].',
     sampleAnswerLevel5:
-      'Unable immediate descent, request descent in two miles.',
+      'Unable immediate descent, request descent in two miles, [callsign].',
     keyPhrases: ['unable', 'at this time', 'request'],
     selfCheckItems: [
       '「Unable」をはっきり言えたか',
@@ -412,11 +413,12 @@ export const QUESTIONS: Question[] = [
     category: 'unable-request',
     difficulty: 'intermediate',
     situation:
-      '前方に雷雲があり、現在のヘディングを維持できません。左への変針が必要です。',
+      '現在ヘディング300で飛行中です。前方に雷雲があり、このヘディングを維持できません。左へヘディング270への変針が必要です。',
     task: '気象を理由に、左へのヘディング変更を要求してください。',
-    sampleAnswerLevel4: 'Request heading two seven zero due to weather.',
+    sampleAnswerLevel4:
+      'Request heading two seven zero due to weather, [callsign].',
     sampleAnswerLevel5:
-      'Request left turn heading two seven zero to avoid weather, will advise when able to resume.',
+      'Request left turn heading two seven zero to avoid weather, will advise when able to resume, [callsign].',
     keyPhrases: ['request', 'due to weather', 'to avoid', 'will advise'],
     selfCheckItems: [
       '要求の理由（weather）を伝えられたか',
@@ -432,9 +434,9 @@ export const QUESTIONS: Question[] = [
     situation:
       '滑走路に向けてタクシー中ですが、出発前にもう少し準備の時間が欲しいです。',
     task: '少し待機したいと依頼してください。',
-    sampleAnswerLevel4: 'Request short delay before departure.',
+    sampleAnswerLevel4: 'Request short delay before departure, [callsign].',
     sampleAnswerLevel5:
-      'Request a short delay, I need a moment to complete my checks.',
+      'Request a short delay, I need a moment to complete my checks, [callsign].',
     keyPhrases: ['request', 'short delay', 'complete my checks'],
     selfCheckItems: [
       '待機の依頼を伝えられたか',
@@ -451,9 +453,9 @@ export const QUESTIONS: Question[] = [
     situation:
       '指示された上昇率では性能的に上がりきれません。',
     task: 'その上昇率では上がれないことを伝え、可能な範囲を示してください。',
-    sampleAnswerLevel4: 'Unable that climb rate, best rate only.',
+    sampleAnswerLevel4: 'Unable that climb rate, best rate only, [callsign].',
     sampleAnswerLevel5:
-      'Unable the requested climb rate, best rate of climb is all I can give.',
+      'Unable the requested climb rate, best rate of climb is all I can give, [callsign].',
     keyPhrases: ['unable', 'climb rate', 'best rate of climb'],
     selfCheckItems: [
       '性能上の制約を伝えられたか',
@@ -470,7 +472,7 @@ export const QUESTIONS: Question[] = [
     situation:
       '指定された場周経路より、フルストップではなくタッチアンドゴーをしたいです。',
     task: 'タッチアンドゴーを要求してください。',
-    sampleAnswerLevel4: 'Request touch and go.',
+    sampleAnswerLevel4: 'Request touch and go, [callsign].',
     sampleAnswerLevel5:
       'Request touch and go, then one more circuit, [callsign].',
     keyPhrases: ['request', 'touch and go', 'one more circuit'],
@@ -480,18 +482,18 @@ export const QUESTIONS: Question[] = [
       '許可前提の言い方ができたか',
     ],
     safetyNote:
-      'やりたい操作は事前に要求し、許可を得てから実施しましょう。“The option” can include touch-and-go, stop-and-go, low approach, missed approach, or full stop. If you only want touch and go, say that clearly.',
+      'やりたい操作は事前に要求し、許可を得てから実施しましょう。なお「the option」は、タッチアンドゴーだけでなく、ストップアンドゴー・ローアプローチ・進入復行・フルストップも含む要求です。タッチアンドゴーだけを希望する場合は、その旨をはっきり伝えましょう。',
   },
   {
     id: 'unr-006',
     category: 'unable-request',
     difficulty: 'intermediate',
     situation:
-      '指定された待機地点ではなく、より手前で待機したいです。',
+      '指定された待機地点ではなく、より手前のtaxiwayで待機したいです。',
     task: '手前の地点での待機を要求してください。',
-    sampleAnswerLevel4: 'Request hold short of the next taxiway.',
+    sampleAnswerLevel4: 'Request hold short of the next taxiway, [callsign].',
     sampleAnswerLevel5:
-      'Request to hold short of the next intersection instead, if able.',
+      'Request to hold short of the next taxiway instead, if able, [callsign].',
     keyPhrases: ['request', 'hold short of', 'if able'],
     selfCheckItems: [
       '希望する待機地点を伝えられたか',
@@ -508,17 +510,17 @@ export const QUESTIONS: Question[] = [
     situation:
       '混雑により指示された経路では時間がかかりすぎ、燃料に余裕がなくなりつつあります。',
     task: '燃料状況を理由に、より直接的な経路を要求してください。',
-    sampleAnswerLevel4: 'Request direct routing due to fuel.',
+    sampleAnswerLevel4: 'Request direct routing due to fuel, [callsign].',
     sampleAnswerLevel5:
-      'Request a more direct routing due to fuel considerations, not an emergency yet.',
-    keyPhrases: ['request', 'direct routing', 'fuel considerations', 'not an emergency'],
+      'Request a more direct routing due to fuel, our remaining fuel is getting low, [callsign].',
+    keyPhrases: ['request', 'direct routing', 'due to fuel'],
     selfCheckItems: [
       '燃料を理由に要求できたか',
-      '緊急ではないと明示できたか',
+      '余裕が減ってきている状況を伝えられたか',
       '早めに状況を共有できたか',
     ],
     safetyNote:
-      '燃料の余裕が減ってきたら、緊急になる前に早めに要求や共有をしましょう。In real operations, “minimum fuel” is an official advisory used when you cannot accept undue delay. It is not the same as declaring an emergency. Follow your instructor, company, and official procedures.',
+      '燃料の余裕が減ってきたら、緊急になる前に早めに要求や共有をしましょう。実運航では「minimum fuel」という公式のアドバイザリ手続きがあり、これ以上の遅延を受け入れられないことを管制に知らせるものです。緊急事態の宣言とは異なります。状況が悪化した場合は、ためらわずPAN-PANやMAYDAYへ切り替えてください。教官・会社・公式手順に従ってください。',
   },
   {
     id: 'unr-008',
@@ -527,9 +529,9 @@ export const QUESTIONS: Question[] = [
     situation:
       '指示された速度まで減速できません。もう少し速度が必要です。',
     task: 'その速度まで落とせないことを伝えてください。',
-    sampleAnswerLevel4: 'Unable that speed, too slow.',
+    sampleAnswerLevel4: 'Unable that speed, [callsign].',
     sampleAnswerLevel5:
-      'Unable the requested speed, I need a higher speed for control.',
+      'Unable the requested speed, I need a higher speed for control, [callsign].',
     keyPhrases: ['unable', 'requested speed', 'higher speed'],
     selfCheckItems: [
       '減速できない旨を伝えられたか',
@@ -544,11 +546,11 @@ export const QUESTIONS: Question[] = [
     category: 'unable-request',
     difficulty: 'intermediate',
     situation:
-      '指示された出発方向と逆の方向へ進みたいです。',
+      '南向きの出発を指示されましたが、北へ向かいたいです。',
     task: '別方向への出発を要求してください。',
-    sampleAnswerLevel4: 'Request departure to the north instead.',
+    sampleAnswerLevel4: 'Request departure to the north instead, [callsign].',
     sampleAnswerLevel5:
-      'Request northbound departure instead of the assigned direction, if able.',
+      'Request northbound departure instead of the assigned direction, if able, [callsign].',
     keyPhrases: ['request', 'departure', 'instead', 'if able'],
     selfCheckItems: [
       '希望する方向を伝えられたか',
@@ -563,11 +565,12 @@ export const QUESTIONS: Question[] = [
     category: 'unable-request',
     difficulty: 'advanced',
     situation:
-      '指示された進入方式が自分の習熟度的に難しく、別のより簡単な進入を希望します。',
+      '計器進入を指示されましたが、自分の習熟度的に難しく、より簡単なビジュアルアプローチを希望します。',
     task: '理由を添えて、別の進入方式を要求してください。',
-    sampleAnswerLevel4: 'Request a visual approach, I am a student pilot.',
+    sampleAnswerLevel4:
+      'Request a visual approach, I am a student pilot, [callsign].',
     sampleAnswerLevel5:
-      'Request a visual approach instead, I am still in training and more comfortable with it.',
+      'Request a visual approach instead of the instrument approach, I am still in training and more comfortable with it, [callsign].',
     keyPhrases: ['request', 'visual approach', 'in training', 'comfortable'],
     selfCheckItems: [
       '希望する進入方式を伝えられたか',
@@ -582,7 +585,7 @@ export const QUESTIONS: Question[] = [
     category: 'unable-request',
     difficulty: 'basic',
     situation:
-      '上昇を指示されましたが、その高度では雲に入ってしまい、VFRを維持できません。',
+      '高度3,500フィートで飛行中、上昇を指示されましたが、その高度では雲に入ってしまい、VFRを維持できません。',
     task: '雲を理由に上昇できないことを伝え、現在高度の維持を要求してください。',
     sampleAnswerLevel4: 'Unable to climb due to clouds, [callsign].',
     sampleAnswerLevel5:
@@ -601,7 +604,7 @@ export const QUESTIONS: Question[] = [
     category: 'unable-request',
     difficulty: 'basic',
     situation:
-      '現在の高度で継続的な乱気流に遭遇しています。より揺れの少ない高度に変えたいです。',
+      '高度4,500フィートで巡航中、継続的な乱気流に遭遇しています。より揺れの少ない高度に変えたいです。',
     task: '乱気流を理由に、低い高度を要求してください。',
     sampleAnswerLevel4: 'Request lower altitude due to turbulence, [callsign].',
     sampleAnswerLevel5:
@@ -677,7 +680,7 @@ export const QUESTIONS: Question[] = [
     category: 'unable-request',
     difficulty: 'basic',
     situation:
-      '訓練空域への往復で、レーダーによる交通情報の提供（VFRフライトフォローイング）を受けたいです。',
+      '訓練空域への往復で、レーダーによる交通情報の提供（VFRフライトフォローイング）を受けたいです。巡航高度は4,500フィートの予定です。',
     task: 'フライトフォローイングを要求してください。',
     sampleAnswerLevel4: 'Request VFR flight following, [callsign].',
     sampleAnswerLevel5:
@@ -779,9 +782,9 @@ export const QUESTIONS: Question[] = [
     situation:
       'タワーから現在位置の報告を求められました。あなたは空港の南10マイル、高度3000フィートです。',
     task: '自機の位置と高度を報告してください。',
-    sampleAnswerLevel4: 'One zero miles south, three thousand feet.',
+    sampleAnswerLevel4: 'One zero miles south, three thousand feet, [callsign].',
     sampleAnswerLevel5:
-      'Position one zero miles south of the field, three thousand feet, inbound for landing.',
+      'Position one zero miles south of the field, three thousand feet, inbound for landing, [callsign].',
     keyPhrases: ['miles south', 'thousand feet', 'inbound'],
     selfCheckItems: [
       '位置を方角と距離で言えたか',
@@ -799,9 +802,9 @@ export const QUESTIONS: Question[] = [
       '訓練空域での作業を終え、帰投します。残燃料は1時間30分、搭乗者は2名です。',
     task: '作業終了と帰投の意図、必要な情報を簡潔に報告してください。',
     sampleAnswerLevel4:
-      'Maneuvers complete, returning to the field, fuel one hour three zero, two on board.',
+      'Maneuvers complete, returning to the field, fuel one hour three zero, two on board, [callsign].',
     sampleAnswerLevel5:
-      'Training maneuvers complete. We are returning to the field with fuel endurance one hour three zero minutes and two persons on board.',
+      '[callsign], training maneuvers complete. We are returning to the field with fuel endurance one hour three zero minutes and two persons on board.',
     keyPhrases: ['maneuvers complete', 'fuel one hour three zero', 'two on board', 'persons on board'],
     selfCheckItems: [
       '現在の活動状況を伝えられたか',
@@ -816,11 +819,11 @@ export const QUESTIONS: Question[] = [
     category: 'situation-report',
     difficulty: 'basic',
     situation:
-      '場周経路のダウンウィンドに入りました。タワーへ位置を報告します。',
+      '滑走路34の左場周経路のダウンウィンドに入りました。フルストップで着陸予定です。タワーへ位置を報告します。',
     task: 'ダウンウィンドにいることを報告してください。',
-    sampleAnswerLevel4: 'Left downwind runway three four.',
+    sampleAnswerLevel4: 'Left downwind runway three four, [callsign].',
     sampleAnswerLevel5:
-      'Entering left downwind for runway three four, full stop.',
+      'Entering left downwind for runway three four, full stop, [callsign].',
     keyPhrases: ['left downwind', 'runway', 'full stop'],
     selfCheckItems: [
       '場周のどの位置か伝えられたか',
@@ -835,11 +838,11 @@ export const QUESTIONS: Question[] = [
     category: 'situation-report',
     difficulty: 'intermediate',
     situation:
-      '指定された地点を通過しました。通過地点と高度を報告します。',
+      '報告地点である湖の上空を、高度3,500フィートで通過しました。通過地点と高度を報告します。',
     task: '地点通過の報告をしてください。',
-    sampleAnswerLevel4: 'Over the lake, three thousand five hundred.',
+    sampleAnswerLevel4: 'Over the lake, three thousand five hundred, [callsign].',
     sampleAnswerLevel5:
-      'Passing the lake at three thousand five hundred, continuing inbound.',
+      'Passing the lake at three thousand five hundred, continuing inbound, [callsign].',
     keyPhrases: ['passing', 'continuing inbound', 'thousand five hundred'],
     selfCheckItems: [
       '通過地点を伝えられたか',
@@ -854,11 +857,11 @@ export const QUESTIONS: Question[] = [
     category: 'situation-report',
     difficulty: 'basic',
     situation:
-      '空港から離れた訓練空域に到着しました。これから作業を始めます。',
+      '空港から離れた訓練空域に、高度4,000フィートで到着しました。これから作業を始めます。',
     task: '訓練空域に到着し作業を開始することを報告してください。',
-    sampleAnswerLevel4: 'In the practice area, starting maneuvers.',
+    sampleAnswerLevel4: 'In the practice area, starting maneuvers, [callsign].',
     sampleAnswerLevel5:
-      'Established in the practice area, beginning maneuvers at four thousand.',
+      'Established in the practice area, beginning maneuvers at four thousand, [callsign].',
     keyPhrases: ['practice area', 'beginning maneuvers', 'established'],
     selfCheckItems: [
       '到着と作業開始を伝えられたか',
@@ -875,17 +878,17 @@ export const QUESTIONS: Question[] = [
     situation:
       '他機を視認するよう指示され、実際に視認できました。',
     task: '相手機を視認したことを報告してください。',
-    sampleAnswerLevel4: 'Traffic in sight.',
+    sampleAnswerLevel4: 'Traffic in sight, [callsign].',
     sampleAnswerLevel5:
-      'Traffic in sight, I will maintain visual separation.',
-    keyPhrases: ['traffic in sight', 'maintain visual separation'],
+      'Traffic in sight, [callsign], I will keep it in sight.',
+    keyPhrases: ['traffic in sight', 'keep it in sight'],
     selfCheckItems: [
       '視認できたことを伝えられたか',
-      '今後の対応を添えられたか',
+      '見続ける意図を添えられたか',
       '簡潔に応答できたか',
     ],
     safetyNote:
-      '視認できていないのに「in sight」と言ってはいけません。確実に見えた時だけ報告を。',
+      '視認できていないのに「in sight」と言ってはいけません。確実に見えた時だけ報告しましょう。なお visual separation（視認間隔の維持）は管制の指示や承認に基づくもので、操縦士が自分から宣言するものではありません。指示された場合はその指示に従ってください。',
   },
   {
     id: 'sit-007',
@@ -894,9 +897,9 @@ export const QUESTIONS: Question[] = [
     situation:
       '指示された他機がどうしても見つけられません。',
     task: '相手機が見えないことを報告してください。',
-    sampleAnswerLevel4: 'Negative contact, looking for traffic.',
+    sampleAnswerLevel4: 'Negative contact, looking for traffic, [callsign].',
     sampleAnswerLevel5:
-      'Negative contact, still looking, request traffic update.',
+      'Negative contact, still looking, request traffic update, [callsign].',
     keyPhrases: ['negative contact', 'looking for traffic', 'traffic update'],
     selfCheckItems: [
       '視認できていないと正直に伝えられたか',
@@ -911,11 +914,11 @@ export const QUESTIONS: Question[] = [
     category: 'situation-report',
     difficulty: 'basic',
     situation:
-      'ファイナルアプローチに入りました。タワーへ報告します。',
+      '滑走路34のファイナルアプローチに入りました。フルストップで着陸します。タワーへ報告します。',
     task: 'ファイナルにいることを報告してください。',
-    sampleAnswerLevel4: 'On final runway three four.',
+    sampleAnswerLevel4: 'On final runway three four, [callsign].',
     sampleAnswerLevel5:
-      'On final for runway three four, full stop landing.',
+      'On final for runway three four, full stop landing, [callsign].',
     keyPhrases: ['on final', 'runway', 'full stop'],
     selfCheckItems: [
       'ファイナルにいることを伝えられたか',
@@ -930,11 +933,11 @@ export const QUESTIONS: Question[] = [
     category: 'situation-report',
     difficulty: 'intermediate',
     situation:
-      '指定高度に到達し、その高度を維持しています。',
+      '指示された高度5,000フィートに到達し、その高度と現在のヘディングを維持しています。',
     task: '指定高度に到達し維持していることを報告してください。',
-    sampleAnswerLevel4: 'Level at five thousand.',
+    sampleAnswerLevel4: 'Level at five thousand, [callsign].',
     sampleAnswerLevel5:
-      'Level at five thousand, maintaining heading.',
+      'Level at five thousand, maintaining heading, [callsign].',
     keyPhrases: ['level at', 'maintaining', 'thousand'],
     selfCheckItems: [
       '到達高度を報告できたか',
@@ -952,9 +955,9 @@ export const QUESTIONS: Question[] = [
       '視程が落ちてきて、目的の空港が見えにくくなっています。状況を共有したいです。',
     task: '視程の悪化と現在の状況を報告してください。',
     sampleAnswerLevel4:
-      'Visibility is getting worse, request vectors to the field.',
+      'Visibility is getting worse, request vectors to the field, [callsign].',
     sampleAnswerLevel5:
-      'Visibility is decreasing, I do not have the field in sight, request vectors to the field.',
+      'Visibility is decreasing, I do not have the field in sight, request vectors to the field, [callsign].',
     keyPhrases: ['visibility decreasing', 'not in sight', 'request vectors'],
     selfCheckItems: [
       '視程悪化を伝えられたか',
@@ -969,7 +972,7 @@ export const QUESTIONS: Question[] = [
     category: 'situation-report',
     difficulty: 'basic',
     situation:
-      '場周経路でベースレグに旋回します。タワーへ位置を報告します。',
+      '滑走路34の左場周経路で、ベースレグに旋回します。フルストップで着陸予定です。タワーへ位置を報告します。',
     task: 'ベースレグに入ることを報告してください。',
     sampleAnswerLevel4: 'Left base runway three four, [callsign].',
     sampleAnswerLevel5:
@@ -1007,7 +1010,7 @@ export const QUESTIONS: Question[] = [
     category: 'situation-report',
     difficulty: 'basic',
     situation:
-      '着陸後、管制官から滑走路を離脱したら報告するよう求められています。滑走路から離脱しました。',
+      '滑走路34に着陸後、管制官から滑走路を離脱したら報告するよう求められています。taxiway Bravoから滑走路を離脱しました。',
     task: '滑走路から離脱したことを報告してください。',
     sampleAnswerLevel4: '[callsign], clear of runway three four.',
     sampleAnswerLevel5:
@@ -1065,7 +1068,7 @@ export const QUESTIONS: Question[] = [
     category: 'situation-report',
     difficulty: 'intermediate',
     situation:
-      '空港へ帰投中、タワー空域に近づいています。ATISを受信済みで、最初の交信を行います。',
+      '空港へ帰投中、タワー空域に近づいています。現在、空港の西10マイル、高度3,500フィートです。ATIS情報Bravoを受信済みで、フルストップで着陸予定です。最初の交信を行います。',
     task: '位置・高度・ATIS受信・着陸意図を含めて最初のコンタクトをしてください。',
     sampleAnswerLevel4:
       'Tower, [callsign], ten miles west at three thousand five hundred, information Bravo, inbound.',
@@ -1166,7 +1169,7 @@ export const QUESTIONS: Question[] = [
     category: 'abnormal-emergency',
     difficulty: 'intermediate',
     situation:
-      'エンジン計器に異常を示す表示が出ました。直ちに緊急ではありませんが、注意が必要な状況です。',
+      'エンジン計器に異常を示す表示が出ました。搭乗者は2名です。直ちに緊急ではありませんが、注意が必要な状況です。',
     task: 'PAN-PANを用いて、状況をATCに伝えてください。',
     sampleAnswerLevel4:
       'Pan-pan, pan-pan, pan-pan, [callsign], engine indication problem, request return to the field.',
@@ -1179,19 +1182,19 @@ export const QUESTIONS: Question[] = [
       '必要な支援を要求できたか',
     ],
     safetyNote:
-      'PAN-PANは緊急未満の異常事態に用います。生命に差し迫った危険がある場合はMAYDAYを使用します。',
+      'PAN-PANは、MAYDAYほど切迫していないものの、即時の注意・支援を必要とする状態（urgency）に用います。生命や機体に差し迫った重大な危険がある場合はMAYDAYを使用します。状況が悪化したら、ためらわずMAYDAYへ切り替えてください。',
   },
   {
     id: 'abn-002',
     category: 'abnormal-emergency',
     difficulty: 'advanced',
     situation:
-      'エンジンが停止し、直ちに緊急着陸が必要な状況です。生命に差し迫った危険があります。',
+      'エンジンが停止し、直ちに緊急着陸が必要な状況です。現在、空港の北5マイル、搭乗者は2名です。生命に差し迫った危険があります。',
     task: 'MAYDAYを用いて、緊急事態と必要な情報を伝えてください。',
     sampleAnswerLevel4:
       'Mayday, mayday, mayday, [callsign], engine failure, forced landing, two persons on board.',
     sampleAnswerLevel5:
-      'Mayday, mayday, mayday, [callsign], engine failure, attempting forced landing, position five miles north of the field, two persons on board, requesting immediate assistance.',
+      'Mayday, mayday, mayday, [callsign], engine failure, attempting forced landing. Position five miles north of the field, two persons on board, requesting immediate assistance.',
     keyPhrases: ['mayday', 'engine failure', 'forced landing', 'requesting immediate assistance'],
     selfCheckItems: [
       'MAYDAYを3回繰り返せたか',
@@ -1210,7 +1213,7 @@ export const QUESTIONS: Question[] = [
     task: '送信が聞こえているか確認してください。',
     sampleAnswerLevel4: '[callsign], how do you read?',
     sampleAnswerLevel5:
-      'How do you read me? I think I have a radio problem.',
+      '[callsign], how do you read me? I think I have a radio problem.',
     keyPhrases: ['how do you read', 'radio problem'],
     selfCheckItems: [
       '受信状況の確認を求められたか',
@@ -1266,7 +1269,7 @@ export const QUESTIONS: Question[] = [
     difficulty: 'basic',
     situation:
       '体調が急に悪くなってきましたが、まだ操縦は続けられます。早めに降りたいです。',
-    task: '体調不良を伝え、早めの着陸を要求してください。',
+    task: 'PAN-PANで体調不良を伝え、早めの着陸を要求してください。',
     sampleAnswerLevel4:
       'Pan-pan, pan-pan, pan-pan, [callsign], I feel sick, request to land soon.',
     sampleAnswerLevel5:
@@ -1305,7 +1308,7 @@ export const QUESTIONS: Question[] = [
     category: 'abnormal-emergency',
     difficulty: 'advanced',
     situation:
-      '緊急事態を宣言して対応中でしたが、状況が安定し、危険が去りました。',
+      'MAYDAYで緊急事態を宣言して対応中でしたが、状況が安定し、危険が去りました。',
     task: '緊急状態を解除することを伝えてください。',
     sampleAnswerLevel4:
       'Cancel mayday, [callsign], situation is under control.',
@@ -1325,12 +1328,12 @@ export const QUESTIONS: Question[] = [
     category: 'abnormal-emergency',
     difficulty: 'intermediate',
     situation:
-      '緊急事態の最中で、管制官から搭乗者数と残燃料を尋ねられました。',
+      '緊急事態の最中で、管制官から搭乗者数と残燃料を尋ねられました。搭乗者は2名、残燃料は約1時間分です。',
     task: '搭乗者数と残燃料を報告してください。',
     sampleAnswerLevel4:
       'Two persons on board, fuel one hour, [callsign].',
     sampleAnswerLevel5:
-      'Two persons on board, fuel endurance about one hour remaining.',
+      'Two persons on board, fuel endurance about one hour remaining, [callsign].',
     keyPhrases: ['persons on board', 'fuel endurance', 'remaining'],
     selfCheckItems: [
       '搭乗者数を正確に伝えられたか',
@@ -1404,7 +1407,7 @@ export const QUESTIONS: Question[] = [
     category: 'abnormal-emergency',
     difficulty: 'intermediate',
     situation:
-      '上昇中に鳥と衝突しました。機体はコントロールできていますが、翼前縁の損傷の程度が不明です。点検のため帰投します。',
+      '上昇中に鳥と衝突しました。左翼の前縁に当たったのが見えましたが、損傷の程度は不明です。機体はコントロールできています。点検のため帰投します。',
     task: 'PAN-PANでバードストライクを報告し、帰投を伝えてください。',
     sampleAnswerLevel4:
       'Pan-pan, pan-pan, pan-pan, [callsign], bird strike, returning to land.',
@@ -1447,7 +1450,7 @@ export const QUESTIONS: Question[] = [
     task: 'トランスポンダが故障したことを伝えてください。',
     sampleAnswerLevel4: '[callsign], transponder appears inoperative.',
     sampleAnswerLevel5:
-      '[callsign], transponder failure indicated on board, transponder appears inoperative, request instructions.',
+      '[callsign], transponder failure indicated on board, request instructions.',
     keyPhrases: ['transponder inoperative', 'failure indicated', 'request instructions'],
     selfCheckItems: [
       '故障の事実を伝えられたか',
@@ -1462,7 +1465,7 @@ export const QUESTIONS: Question[] = [
     category: 'abnormal-emergency',
     difficulty: 'advanced',
     situation:
-      '管制の声が全く聞こえなくなりました。自分の送信が届いているかは不明です。受信機の故障を疑い、位置と意図を一方的に送信します。',
+      '管制の声が全く聞こえなくなりました。現在、空港の南5マイル、高度3,000フィートです。自分の送信が届いているかは不明で、受信機の故障を疑い、位置と意図を一方的に送信します。',
     task: '受信機故障の疑いを伝え、ブラインド送信で位置と意図を放送してください。',
     sampleAnswerLevel4:
       'Transmitting in the blind due to receiver failure, [callsign], returning to the field.',
@@ -1502,12 +1505,12 @@ export const QUESTIONS: Question[] = [
     category: 'abnormal-emergency',
     difficulty: 'basic',
     situation:
-      'ソロでのクロスカントリー訓練中、地形が予想と合わず、自機の位置に自信が持てなくなりました。燃料には余裕があります。',
+      'ソロでのクロスカントリー訓練中、地形が予想と合わず、自機の位置に自信が持てなくなりました。最後に位置を確認できたのは1520Zの湖の上空で、その後は西へ、高度3,500フィートで飛行しています。燃料は約2時間分残っています。',
     task: 'PAN-PANで位置がわからないことを伝え、支援を求めてください。',
     sampleAnswerLevel4:
       'Pan-pan, pan-pan, pan-pan, [callsign], student pilot, unsure of position, request assistance.',
     sampleAnswerLevel5:
-      'Pan-pan, pan-pan, pan-pan, [callsign], student pilot, unsure of position, last known position over the lake at one five two zero Zulu, heading west, three thousand five hundred, fuel two hours, request assistance.',
+      'Pan-pan, pan-pan, pan-pan, [callsign], student pilot, unsure of position, request assistance. Last known position over the lake at one five two zero Zulu, heading west, three thousand five hundred, fuel two hours.',
     keyPhrases: ['pan-pan', 'unsure of position', 'last known position', 'request assistance'],
     selfCheckItems: [
       'PAN-PANで支援の必要性を伝えられたか',
@@ -1522,12 +1525,12 @@ export const QUESTIONS: Question[] = [
     category: 'abnormal-emergency',
     difficulty: 'advanced',
     situation:
-      'エンジンから炎が見えています。生命に差し迫った危険があり、直ちに着陸が必要です。',
+      'エンジンから炎が見えています。現在、空港の南5マイル、高度2,000フィート、搭乗者は2名です。生命に差し迫った危険があり、直ちに着陸が必要です。',
     task: 'MAYDAYでエンジン火災を宣言し、位置と意図を伝えてください。',
     sampleAnswerLevel4:
       'Mayday, mayday, mayday, [callsign], engine fire, landing immediately.',
     sampleAnswerLevel5:
-      'Mayday, mayday, mayday, [callsign], engine fire, landing immediately, five miles south of the field at two thousand, two persons on board.',
+      'Mayday, mayday, mayday, [callsign], engine fire, landing immediately. Five miles south of the field at two thousand, two persons on board.',
     keyPhrases: ['mayday', 'engine fire', 'landing immediately', 'persons on board'],
     selfCheckItems: [
       'MAYDAYを3回繰り返せたか',
@@ -1542,12 +1545,12 @@ export const QUESTIONS: Question[] = [
     category: 'abnormal-emergency',
     difficulty: 'basic',
     situation:
-      '巡航中、緊急周波数121.5MHzを聞いていたところ、ELT（航空機用救命無線機）の信号音が聞こえました。管制へ知らせます。',
+      '巡航中、緊急周波数121.5MHzを聞いていたところ、ELT（航空機用救命無線機）の信号音が聞こえました。最初に聞こえたのは1520Z、そのときの位置は空港の南10マイル、高度4,500フィートで、信号は強く聞こえています。管制へ知らせます。',
     task: 'ELT信号を受信したことを報告してください。',
     sampleAnswerLevel4:
       '[callsign], receiving an ELT signal on one two one point five.',
     sampleAnswerLevel5:
-      '[callsign], receiving an ELT signal on one two one point five, first heard at one five two zero Zulu, ten miles south of the field at four thousand five hundred, signal strong.',
+      '[callsign], receiving an ELT signal on one two one point five, first heard at one five two zero Zulu. Position ten miles south of the field at four thousand five hundred, signal strong.',
     keyPhrases: ['ELT signal', 'one two one point five', 'first heard', 'signal strong'],
     selfCheckItems: [
       '受信した周波数を伝えられたか',
@@ -1567,7 +1570,7 @@ export const QUESTIONS: Question[] = [
     category: 'training-plain-english',
     difficulty: 'intermediate',
     situation:
-      '管制官に、これから空域で実施する訓練内容（スローフライトとスティープターン）を平易な英語で説明する必要があります。',
+      '管制官に、これから空域で実施する訓練内容（スローフライトとスティープターン、所要約20分の見込み）を平易な英語で説明する必要があります。',
     task: '定型文ではなく、自分の言葉でこれから行う作業を説明してください。',
     sampleAnswerLevel4:
       'We will do slow flight and steep turns in this area for about twenty minutes.',
@@ -1587,7 +1590,7 @@ export const QUESTIONS: Question[] = [
     category: 'training-plain-english',
     difficulty: 'advanced',
     situation:
-      '教官役の管制官から「なぜ今アプローチをやり直したのか」と平易な英語で質問されました。',
+      '教官または試験官から「なぜ今アプローチをやり直したのか」と平易な英語で質問されました。',
     task: 'ゴーアラウンドを決めた理由を、自分の言葉で説明してください。',
     sampleAnswerLevel4:
       'I was too high and too fast, so I decided to go around.',
@@ -1686,13 +1689,13 @@ export const QUESTIONS: Question[] = [
     category: 'training-plain-english',
     difficulty: 'advanced',
     situation:
-      '教官役の管制官から「今の着陸はどうだったと思うか」と感想を求められました。',
+      '教官または試験官から「今の着陸はどうだったと思うか」と感想を求められました。',
     task: '自分の着陸について、良かった点と課題を平易な英語で述べてください。',
     sampleAnswerLevel4:
-      'The landing was okay, but a little hard.',
+      'The approach was stable, but the landing was a little hard.',
     sampleAnswerLevel5:
-      'I think the landing was okay, but I touched down a bit hard, I need to work on the flare.',
-    keyPhrases: ['I think', 'touched down', 'a bit hard', 'work on'],
+      'I think my approach was stable and on speed, but I touched down a bit hard. I need to work on the flare.',
+    keyPhrases: ['I think', 'stable', 'touched down', 'work on'],
     selfCheckItems: [
       '自分の操作を振り返って言えたか',
       '良かった点と課題を分けられたか',
@@ -1746,7 +1749,7 @@ export const QUESTIONS: Question[] = [
     category: 'training-plain-english',
     difficulty: 'advanced',
     situation:
-      '教官役の管制官から、今日のフライト全体を振り返って何を学んだか尋ねられました。',
+      '教官または試験官から、今日のフライト全体を振り返って何を学んだか尋ねられました。',
     task: '今日学んだことを、自分の言葉で簡潔に説明してください。',
     sampleAnswerLevel4:
       'Today I learned to keep a better lookout.',

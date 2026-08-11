@@ -1,6 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { CATEGORIES, Category, CategoryId, Question } from './types';
 import { QUESTIONS } from './data/questions';
+import { useVoices } from './hooks/useVoices';
+import {
+  cancelSpeech,
+  getRate,
+  getSpeechText,
+  isSpeechSupported,
+  speak,
+  SpeedOption,
+} from './utils/speech';
 
 type Screen = 'top' | 'category' | 'question' | 'complete';
 
@@ -24,6 +33,9 @@ export default function App() {
   // 回答・模範回答の表示制御
   const [revealed, setRevealed] = useState(false);
   const [checkedItems, setCheckedItems] = useState<Set<number>>(new Set());
+
+  // 読み上げに使う話者（読み込みは初回のみ）
+  const { voice } = useVoices();
 
   // ページ先頭の目印
   const topRef = useRef<HTMLDivElement>(null);
@@ -55,6 +67,24 @@ export default function App() {
     scrollToTop();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screen, activeCategory, questionIndex, revealed]);
+
+  // 画面遷移・問題切り替えのタイミングで、再生中の読み上げを止める
+  useEffect(() => {
+    cancelSpeech();
+  }, [screen, activeCategory, questionIndex]);
+
+  // アプリを離れる（タブ切り替え・ホームに戻る）ときも読み上げを止める。
+  // iOS Safari では停止しないまま復帰すると以降の再生が不安定になるため。
+  useEffect(() => {
+    const stopOnHide = () => {
+      if (document.visibilityState === 'hidden') cancelSpeech();
+    };
+    document.addEventListener('visibilitychange', stopOnHide);
+    return () => {
+      document.removeEventListener('visibilitychange', stopOnHide);
+      cancelSpeech();
+    };
+  }, []);
 
   const categoryQuestions = activeCategory
     ? QUESTIONS.filter((q) => q.category === activeCategory)
@@ -157,6 +187,7 @@ export default function App() {
             onBack={goToCategory}
             checkedItems={checkedItems}
             onToggleCheck={toggleCheck}
+            voice={voice}
           />
         )}
 
@@ -245,6 +276,58 @@ function CategoryScreen({
   );
 }
 
+/* ---------- 回答例の読み上げボタン ---------- */
+function SpeakButtons({
+  text,
+  voice,
+  accent,
+}: {
+  /** 表示用テキスト。読み上げ直前に読み上げ用へ変換する */
+  text: string;
+  voice: SpeechSynthesisVoice | null;
+  /** 回答例の色に合わせるためのクラス（Level 4 / Level 5で色を変える） */
+  accent: string;
+}) {
+  const [speakingSpeed, setSpeakingSpeed] = useState<SpeedOption | null>(null);
+
+  // 音声非対応のブラウザではボタン自体を出さない
+  if (!isSpeechSupported()) return null;
+
+  const play = (speed: SpeedOption) => {
+    // 再生中に同じボタンを押したら停止する
+    if (speakingSpeed === speed) {
+      cancelSpeech();
+      setSpeakingSpeed(null);
+      return;
+    }
+    speak(getSpeechText(text), {
+      rate: getRate(speed),
+      voice,
+      onStart: () => setSpeakingSpeed(speed),
+      onEnd: () => setSpeakingSpeed(null),
+    });
+  };
+
+  return (
+    <div className="mt-3 flex gap-2">
+      <button
+        onClick={() => play('normal')}
+        className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition ${accent}`}
+        aria-label="回答例を読み上げる"
+      >
+        {speakingSpeed === 'normal' ? '■ 停止' : '▶ 聞く'}
+      </button>
+      <button
+        onClick={() => play('slow')}
+        className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition ${accent}`}
+        aria-label="回答例をゆっくり読み上げる"
+      >
+        {speakingSpeed === 'slow' ? '■ 停止' : '▶ ゆっくり'}
+      </button>
+    </div>
+  );
+}
+
 /* ---------- 問題画面 ---------- */
 function QuestionScreen({
   question,
@@ -256,6 +339,7 @@ function QuestionScreen({
   onBack,
   checkedItems,
   onToggleCheck,
+  voice,
 }: {
   question: Question;
   index: number;
@@ -266,6 +350,7 @@ function QuestionScreen({
   onBack: () => void;
   checkedItems: Set<number>;
   onToggleCheck: (i: number) => void;
+  voice: SpeechSynthesisVoice | null;
 }) {
   const isLast = index >= total - 1;
 
@@ -343,6 +428,11 @@ function QuestionScreen({
             <p className="mt-2 text-sm leading-7 text-emerald-50">
               {question.sampleAnswerLevel4}
             </p>
+            <SpeakButtons
+              text={question.sampleAnswerLevel4}
+              voice={voice}
+              accent="border-emerald-700/50 bg-emerald-900/30 text-emerald-200 hover:bg-emerald-900/60 active:bg-emerald-900"
+            />
           </section>
 
           {/* Level 5向け回答例 */}
@@ -353,6 +443,11 @@ function QuestionScreen({
             <p className="mt-2 text-sm leading-7 text-violet-50">
               {question.sampleAnswerLevel5}
             </p>
+            <SpeakButtons
+              text={question.sampleAnswerLevel5}
+              voice={voice}
+              accent="border-violet-700/50 bg-violet-900/30 text-violet-200 hover:bg-violet-900/60 active:bg-violet-900"
+            />
           </section>
 
           {/* キーフレーズ */}

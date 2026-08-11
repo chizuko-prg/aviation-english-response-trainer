@@ -17,6 +17,9 @@ note.
   Training Flight Plain English
 - Two sample answers per question (ICAO Level 4 and Level 5 oriented), showing
   that **more than one natural answer is possible** for the same situation
+- Sample answers can be played back at normal or slow speed using the browser's
+  built-in speech synthesis. These are **synthesized voices for study support**,
+  not recordings of real air traffic control, and they vary by device and browser
 - Designed for smartphones; installable to the home screen as a web app
 - No account and no backend. Anonymous usage analytics may be collected for
   service improvement.
@@ -91,6 +94,7 @@ described in the English sections at the end of this document.
    - Situation（状況）と Task（課題）を読みます。
    - **まず声に出して、自分の英語で答えます。**
    - 「模範回答を見る」をタップすると、Level 4 / Level 5 の回答例、キーフレーズ、自己チェック、Safety Note が表示されます。
+   - 各回答例の下にある「▶ 聞く」「▶ ゆっくり」で、その回答例を音声で確認できます（再生中はボタンが「■ 停止」に変わります）。
    - 自己チェック項目をタップして振り返ります。
    - 「次の問題へ →」で進みます（最終問題では「カテゴリを完了する →」になります）。
 4. **完了画面** — 練習した問題数が表示されます。「このカテゴリをもう一度」「カテゴリへ戻る」「トップへ戻る」から選べます。
@@ -107,6 +111,12 @@ described in the English sections at the end of this document.
 - 難易度バッジ（Basic / Intermediate / Advanced）の表示
 - 「模範回答を見る」による回答例の表示切り替え（答えを見る前に自分で言う設計）
 - Level 4 向け・Level 5 向けの 2 種類の回答例表示
+- **回答例の音声再生**（Level 4 / Level 5 それぞれに「▶ 聞く」「▶ ゆっくり」の 2 段階）
+  - ブラウザ標準の Web Speech API による合成音声（音声ファイルは同梱していません）
+  - 「ゆっくり」は聞き取り・発話練習用に、通常よりはっきり遅い速度で読み上げます
+  - 音声ボタンは模範回答を表示したあとにだけ現れます（先に答えを聞いてしまわないため）
+  - 再生中に同じボタンを押すと停止します。問題を切り替えたときや画面を離れたときも自動で停止します
+  - 回答例内の `[callsign]` は、読み上げ時のみ練習用のコールサインに置き換えられます（画面表示は `[callsign]` のままです）
 - キーフレーズの一覧表示
 - 自己チェック項目のチェック / チェック解除（問題ごとにリセット）
 - Safety Note の表示（全 100 問に設定）
@@ -119,9 +129,17 @@ described in the English sections at the end of this document.
   - ファビコン / Apple Touch Icon / Web App Manifest（`display: standalone`）を同梱
 - Vercel Web Analytics によるアクセス計測
 
+**音声機能についての補足**
+
+- 読み上げに使う音声は、**実際の管制官の音声や訓練用の録音ではありません**。ブラウザに搭載されている合成音声を、学習の補助として利用しています。
+- 利用できる音声の種類・声質・読み上げの自然さは、**端末や OS、ブラウザによって異なります**。同じ回答例でも環境によって聞こえ方が変わります。
+- 米国での訓練を想定しているため、英語の音声のうち男性の声を優先して選びます（macOS / iOS では Daniel や Alex など）。該当する音声が見つからない場合は、利用できる英語音声、最終的にはブラウザの既定音声にフォールバックします。
+- 音声に対応していないブラウザでは、再生ボタン自体が表示されません（その他の機能はそのまま利用できます）。
+- 読み上げは発音や言い回しを確認するための参考です。**実際の無線交信での発音・速度・区切り方は、教官の指導と公式資料に従ってください。**
+
 **現時点で実装されていない機能**（誤解を避けるための補足）
 
-- 録音・音声再生・音声認識はありません（問題画面のマイクのアイコンは「声に出す」ことを促すための表示です）
+- 録音機能・音声認識はありません（問題画面のマイクのアイコンは「声に出す」ことを促すための表示です）。実装されているのは回答例の読み上げ（音声出力）のみです
 - 回答の自動採点・AI 判定はありません
 - 学習履歴の保存機能はありません（ページを再読み込みすると進捗はリセットされます）
 
@@ -134,8 +152,11 @@ described in the English sections at the end of this document.
 - **Vite** 6（`@vitejs/plugin-react`）
 - **Tailwind CSS** 3（PostCSS / Autoprefixer）
 - **@vercel/analytics** 2（`src/main.tsx` で `<Analytics />` を描画）
+- **Web Speech API**（ブラウザ標準の `speechSynthesis`。外部ライブラリ・音声ファイルは不要）
 
 状態管理はすべて `App.tsx` 内の `useState` で完結しており、外部の状態管理ライブラリやルーターは使用していません。バックエンド・データベース・独自 API との通信はありません（アクセス計測を除く）。問題データは `src/data/questions.ts` に静的に定義されています。
+
+音声関連の処理は `src/utils/` と `src/hooks/` に分離しており、問題データ（`src/data/questions.ts`）は音声機能の追加によって変更していません。画面に表示するテキストと読み上げに渡すテキストを分けているため、`[callsign]` のようなプレースホルダは表示ではそのまま残り、読み上げのときだけ練習用の表現に置き換わります。
 
 ### ディレクトリ構成
 
@@ -147,6 +168,9 @@ aviation-english-response-trainer/
 ├── tailwind.config.js
 ├── postcss.config.js
 ├── tsconfig.json
+├── LICENSE                # コードのライセンス（MIT）
+├── LICENSE-CONTENT.md     # 教材コンテンツのライセンス（CC BY-NC 4.0）
+├── CONTRIBUTING.md        # コントリビューションの方針
 ├── docs/
 │   └── audit-summary-2026-07-16.md   # 問題文の内容監査の記録
 ├── public/
@@ -159,8 +183,13 @@ aviation-english-response-trainer/
     ├── App.tsx            # 画面全体（4画面ぶんのコンポーネント）
     ├── types.ts           # 型定義とカテゴリ定義
     ├── index.css          # Tailwind の読み込みと基本スタイル
-    └── data/
-        └── questions.ts   # 問題データ（全100問）
+    ├── data/
+    │   └── questions.ts   # 問題データ（全100問）
+    ├── hooks/
+    │   └── useVoices.ts   # 読み上げに使う音声の読み込み
+    └── utils/
+        ├── speech.ts      # 読み上げ用テキストの生成と再生・停止
+        └── voices.ts      # 利用できる音声の取得と選択
 ```
 
 ### セットアップ
@@ -197,6 +226,7 @@ Vercel でホスティングしています（GitHub リポジトリの homepage
 - 本アプリは **ICAO 航空英語能力証明の公式判定アプリではありません**。Level 4〜5 相当の練習・自己評価を目的としており、**合否や認定を保証するものではありません**。
 - 「Level 4 向け回答例」「Level 5 向け回答例」という表記は便宜的なものです。ICAO の Level は本来「話者の能力等級」であって「個々の文の等級」ではありません。
 - 収録されている回答例は参考例であり、唯一の正解ではありません。実際の運用にあたっては、所属機関の規程および公式資料に従ってください。
+- 回答例の読み上げに使われるのは、**ブラウザの合成音声**です。実際の管制官の音声や訓練用の録音ではなく、聞こえ方は端末やブラウザによって異なります。発音・速度・区切り方の手本としては、教官の指導と公式資料を優先してください。
 
 ## 10. 開発・保守
 

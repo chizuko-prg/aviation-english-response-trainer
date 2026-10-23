@@ -149,7 +149,6 @@ described in the English sections at the end of this document.
 - **TypeScript** 5（`strict` 有効）
 - **Vite** 6（`@vitejs/plugin-react`）
 - **Tailwind CSS** 3（PostCSS / Autoprefixer）
-- **@vercel/analytics** 2（`package.json` の依存に残っているが、コードからは使用していない。依存の削除は別の段階で行う）
 - **Web Speech API**（ブラウザ標準の `speechSynthesis`。外部ライブラリ・音声ファイルは不要）
 
 状態管理はすべて `App.tsx` 内の `useState` で完結しており、外部の状態管理ライブラリやルーターは使用していません。バックエンド・データベース・独自 API との通信はありません。問題データは `src/data/questions.ts` に静的に定義されています。

@@ -21,8 +21,7 @@ note.
   built-in speech synthesis. These are **synthesized voices for study support**,
   not recordings of real air traffic control, and they vary by device and browser
 - Designed for smartphones; installable to the home screen as a web app
-- No account and no backend. Anonymous usage analytics may be collected for
-  service improvement.
+- No account and no backend. The app does not include usage analytics.
 
 **This project is for educational and self-study use only.** It is not an
 official ICAO aviation English proficiency assessment tool and does not
@@ -127,7 +126,6 @@ described in the English sections at the end of this document.
   - 画面遷移・問題切り替え・回答表示のたびにページ先頭へ自動スクロール（iOS Safari / Android Chrome 双方に対応するため複数の手段を併用）
   - `100dvh` とセーフエリア（`env(safe-area-inset-bottom)`）を考慮したレイアウト
   - ファビコン / Apple Touch Icon / Web App Manifest（`display: standalone`）を同梱
-- Vercel Web Analytics によるアクセス計測
 
 **音声機能についての補足**
 
@@ -151,10 +149,10 @@ described in the English sections at the end of this document.
 - **TypeScript** 5（`strict` 有効）
 - **Vite** 6（`@vitejs/plugin-react`）
 - **Tailwind CSS** 3（PostCSS / Autoprefixer）
-- **@vercel/analytics** 2（`src/main.tsx` で `<Analytics />` を描画）
+- **@vercel/analytics** 2（`package.json` の依存に残っているが、コードからは使用していない。依存の削除は別の段階で行う）
 - **Web Speech API**（ブラウザ標準の `speechSynthesis`。外部ライブラリ・音声ファイルは不要）
 
-状態管理はすべて `App.tsx` 内の `useState` で完結しており、外部の状態管理ライブラリやルーターは使用していません。バックエンド・データベース・独自 API との通信はありません（アクセス計測を除く）。問題データは `src/data/questions.ts` に静的に定義されています。
+状態管理はすべて `App.tsx` 内の `useState` で完結しており、外部の状態管理ライブラリやルーターは使用していません。バックエンド・データベース・独自 API との通信はありません。問題データは `src/data/questions.ts` に静的に定義されています。
 
 音声関連の処理は `src/utils/` と `src/hooks/` に分離しており、問題データ（`src/data/questions.ts`）は音声機能の追加によって変更していません。画面に表示するテキストと読み上げに渡すテキストを分けているため、`[callsign]` のようなプレースホルダは表示ではそのまま残り、読み上げのときだけ練習用の表現に置き換わります。
 

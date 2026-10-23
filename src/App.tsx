@@ -203,7 +203,9 @@ export default function App() {
       </main>
 
       <footer className="mx-auto w-full max-w-2xl px-4 pb-[calc(env(safe-area-inset-bottom)+1.5rem)] text-center text-[11px] leading-relaxed text-slate-500">
-        アクセス解析・端末内保存の扱いについて：
+        本アプリでは、Vercel Web Analyticsによるアクセス計測を終了しました。
+        <br />
+        データの扱いについて：
         <a
           href="https://sky-apps-terminal.vercel.app/privacy/"
           target="_blank"
